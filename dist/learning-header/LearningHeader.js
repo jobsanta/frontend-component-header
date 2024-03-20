@@ -46,6 +46,8 @@ var LearningHeader = function LearningHeader(_ref2) {
   var fullNameEN = 'Film Archive (Public Organization)';
   return /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "header-container"
   }, /*#__PURE__*/React.createElement("a", {
     className: "sr-only sr-only-focusable",
     href: "#main-content"
@@ -70,11 +72,11 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "d-block small m-0"
   }, courseOrg, " ", courseNumber))), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
     username: authenticatedUser.username
-  }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)), /*#__PURE__*/React.createElement("div", {
+  }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null))), /*#__PURE__*/React.createElement("div", {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("h2", null, "$", fullNameTH), /*#__PURE__*/React.createElement("h1", null, "$", fullNameEN))));
+  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))));
 };
 LearningHeader.propTypes = {
   courseOrg: PropTypes.string,

@@ -44,32 +44,34 @@ const LearningHeader = ({
 
   return (
     <header className="learning-header">
-      <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>
-      <div className="container-xl py-2 d-flex header-logo">
-        <div className="d-flex flex-row">
-          {headerLogo}
-          <div className="full-name-container">
-            <div className="full-name-th">${fullNameTH}</div>
-            <div className="full-name-en">${fullNameEN}</div>
+      <div className="header-container">
+        <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>
+        <div className="container-xl py-2 d-flex header-logo">
+          <div className="d-flex flex-row">
+            {headerLogo}
+            <div className="full-name-container">
+              <div className="full-name-th">${fullNameTH}</div>
+              <div className="full-name-en">${fullNameEN}</div>
+            </div>
+            <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
+              <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
+              <span className="d-block small m-0">{courseOrg} {courseNumber}</span>
+            </div>
           </div>
-          <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
-            <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
-            <span className="d-block small m-0">{courseOrg} {courseNumber}</span>
-          </div>
+          {showUserDropdown && authenticatedUser && (
+          <AuthenticatedUserDropdown
+            username={authenticatedUser.username}
+          />
+          )}
+          {showUserDropdown && !authenticatedUser && (
+          <AnonymousUserMenu />
+          )}
         </div>
-        {showUserDropdown && authenticatedUser && (
-        <AuthenticatedUserDropdown
-          username={authenticatedUser.username}
-        />
-        )}
-        {showUserDropdown && !authenticatedUser && (
-        <AnonymousUserMenu />
-        )}
       </div>
       <div className="banner">
         <div className="banner-container">
-          <h2>${fullNameTH}</h2>
-          <h1>${fullNameEN}</h1>
+          <h2>{fullNameTH}</h2>
+          <h1>E - Learning</h1>
         </div>
       </div>
     </header>
