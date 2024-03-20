@@ -39,6 +39,9 @@ const LearningHeader = ({
     />
   );
 
+  const fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
+  const fullNameEN = 'Film Archive (Public Organization)';
+
   return (
     <header className="learning-header">
       <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>
@@ -46,8 +49,8 @@ const LearningHeader = ({
         <div className="d-flex flex-row">
           {headerLogo}
           <div className="full-name-container">
-            <div className="full-name-th">หอภาพยนตร์ (องค์การมหาชน)</div>
-            <div className="full-name-en">Film Archive (Public Organization)</div>
+            <div className="full-name-th">${fullNameTH}</div>
+            <div className="full-name-en">${fullNameEN}</div>
           </div>
           <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
             <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
@@ -62,6 +65,12 @@ const LearningHeader = ({
         {showUserDropdown && !authenticatedUser && (
         <AnonymousUserMenu />
         )}
+      </div>
+      <div className="banner">
+        <div className="banner-container">
+          <h2>${fullNameTH}</h2>
+          <h1>${fullNameEN}</h1>
+        </div>
       </div>
     </header>
   );

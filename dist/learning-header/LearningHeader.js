@@ -42,6 +42,8 @@ var LearningHeader = function LearningHeader(_ref2) {
     src: getConfig().LOGO_URL,
     alt: getConfig().SITE_NAME
   });
+  var fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
+  var fullNameEN = 'Film Archive (Public Organization)';
   return /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("a", {
@@ -55,9 +57,9 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "full-name-container"
   }, /*#__PURE__*/React.createElement("div", {
     className: "full-name-th"
-  }, "\u0E2B\u0E2D\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C (\u0E2D\u0E07\u0E04\u0E4C\u0E01\u0E32\u0E23\u0E21\u0E2B\u0E32\u0E0A\u0E19)"), /*#__PURE__*/React.createElement("div", {
+  }, "$", fullNameTH), /*#__PURE__*/React.createElement("div", {
     className: "full-name-en"
-  }, "Film Archive (Public Organization)")), /*#__PURE__*/React.createElement("div", {
+  }, "$", fullNameEN)), /*#__PURE__*/React.createElement("div", {
     className: "flex-grow-1 course-title-lockup",
     style: {
       lineHeight: 1
@@ -68,7 +70,11 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "d-block small m-0"
   }, courseOrg, " ", courseNumber))), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
     username: authenticatedUser.username
-  }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)));
+  }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)), /*#__PURE__*/React.createElement("div", {
+    className: "banner"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "banner-container"
+  }, /*#__PURE__*/React.createElement("h2", null, "$", fullNameTH), /*#__PURE__*/React.createElement("h1", null, "$", fullNameEN))));
 };
 LearningHeader.propTypes = {
   courseOrg: PropTypes.string,

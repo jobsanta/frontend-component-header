@@ -27,6 +27,12 @@ $white: #fff;
 }
 
 .learning-header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  flex-direction: column;
+
+
   min-width: 0;
   display: flex;
   height: 48px;
@@ -122,6 +128,57 @@ $white: #fff;
       border-radius: 6px;
       font-weight: 500;
     }
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: #2D2D2D;
+
+    @include media-breakpoint-up(lg) {
+      height: 140px;
+    }
+
+    .banner-container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1090px;
+      margin: 16px 0 0 48px;
+
+      h1, h2 {
+        color: white;
+        font-weight: 700;
+        text-align: start;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 0.75rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: 24px 0 0 224px;
+
+        h1, h2 {
+          font-size: revert;
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  padding-top: 128px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 220px;
   }
 }
 
