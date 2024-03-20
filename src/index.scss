@@ -67,6 +67,7 @@ $white: #fff;
           flex-direction: column; 
           width: 220px;
           align-items: flex-start;
+          align-self: center;
           font-weight: 700;
           line-height: 1.5rem;
           .full-name-th {
@@ -85,9 +86,10 @@ $white: #fff;
       width: 220px;
       flex-grow: unset !important;
       align-self: center;
+      gap: 8px;
   
       @include media-breakpoint-up(lg) {
-        display: flex;
+        display: flex !important;
       }
   
       span {
