@@ -52,6 +52,12 @@ var LearningHeader = function LearningHeader(_ref2) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "d-flex flex-row"
   }, headerLogo, /*#__PURE__*/React.createElement("div", {
+    className: "full-name-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "full-name-th"
+  }, "\u0E2B\u0E2D\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C (\u0E2D\u0E07\u0E04\u0E4C\u0E01\u0E32\u0E23\u0E21\u0E2B\u0E32\u0E0A\u0E19)"), /*#__PURE__*/React.createElement("div", {
+    className: "full-name-en"
+  }, "Film Archive (Public Organization)")), /*#__PURE__*/React.createElement("div", {
     className: "flex-grow-1 course-title-lockup",
     style: {
       lineHeight: 1

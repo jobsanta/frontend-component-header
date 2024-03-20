@@ -45,6 +45,10 @@ const LearningHeader = ({
       <div className="container-xl py-2 d-flex header-logo">
         <div className="d-flex flex-row">
           {headerLogo}
+          <div className="full-name-container">
+            <div className="full-name-th">หอภาพยนตร์ (องค์การมหาชน)</div>
+            <div className="full-name-en">Film Archive (Public Organization)</div>
+          </div>
           <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
             <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
             <span className="d-block small m-0">{courseOrg} {courseNumber}</span>
