@@ -7,10 +7,11 @@ import genericMessages from '../generic/messages';
 var AnonymousUserMenu = function AnonymousUserMenu(_ref) {
   var intl = _ref.intl;
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Button, {
-    className: "mr-3",
+    className: "login-button mr-3",
     variant: "outline-primary",
     href: "".concat(getConfig().LMS_BASE_URL, "/register?next=").concat(encodeURIComponent(global.location.href))
   }, intl.formatMessage(genericMessages.registerSentenceCase)), /*#__PURE__*/React.createElement(Button, {
+    className: "login-button",
     variant: "primary",
     href: "".concat(getLoginRedirectUrl(global.location.href))
   }, intl.formatMessage(genericMessages.signInSentenceCase)));

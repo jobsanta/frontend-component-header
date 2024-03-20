@@ -28,6 +28,13 @@ $white: #fff;
 
 .learning-header {
   min-width: 0;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+
+  @include media-breakpoint-up(lg) {
+    height: 80px;
+  }
 
   .course-title-lockup {
     min-width: 0;
@@ -47,6 +54,20 @@ $white: #fff;
       //   padding: 0 0.5rem;
       // }
     }
+  }
+
+  .login-button {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: unset;
+    }
+
+    height: 40px;
+    padding: 9px 17px;
+    font-size: 0.875rem;
+    border-radius: 6px;
+    font-weight: 500;
   }
 }
 
