@@ -49,7 +49,9 @@ var LearningHeader = function LearningHeader(_ref2) {
     href: "#main-content"
   }, intl.formatMessage(messages.skipNavLink)), /*#__PURE__*/React.createElement("div", {
     className: "container-xl py-2 d-flex header-logo"
-  }, /*#__PURE__*/React.createElement("div", null, headerLogo, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "d-flex flex-row"
+  }, headerLogo, /*#__PURE__*/React.createElement("div", {
     className: "flex-grow-1 course-title-lockup",
     style: {
       lineHeight: 1
