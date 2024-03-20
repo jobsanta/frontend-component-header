@@ -4,6 +4,7 @@ import es419Messages from './messages/es_419.json';
 import zhcnMessages from './messages/zh_CN.json';
 import ptMessages from './messages/pt.json';
 import itMessages from './messages/it.json';
+import thMessages from './messages/th.json';
 import ukMessages from './messages/uk.json';
 import deMessages from './messages/de.json';
 import ruMessages from './messages/ru.json';
@@ -22,6 +23,7 @@ const messages = {
   hi: hiMessages,
   'fr-ca': frCAMessages,
   ru: ruMessages,
+  th: thMessages,
   uk: ukMessages,
 };
 
