@@ -37,7 +37,7 @@ var LearningHeader = function LearningHeader(_ref2) {
   var _useContext = useContext(AppContext),
     authenticatedUser = _useContext.authenticatedUser;
   var headerLogo = /*#__PURE__*/React.createElement(LinkedLogo, {
-    className: "logo",
+    className: "link-logo",
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard"),
     src: getConfig().LOGO_URL,
     alt: getConfig().SITE_NAME

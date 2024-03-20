@@ -45,12 +45,28 @@ $white: #fff;
       justify-content: space-between; 
     }
 
+    .link-logo {
+      margin: 0 !important;
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 8px 0 0 !important;
+      }
+
+      img {
+        height: 40px;
+        @include media-breakpoint-up(lg) {
+            height: 60px;
+        }
+      }
+    }
+
     .course-title-lockup {
       min-width: 0;
       flex-direction: column;
-      display: none;
+      display: none !important;
       width: 220px;
       flex-grow: unset !important;
+      align-self: center;
   
       @include media-breakpoint-up(lg) {
         display: flex;
