@@ -61,7 +61,7 @@ var LearningHeader = function LearningHeader(_ref2) {
   });
   var fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
   var fullNameEN = 'Film Archive (Public Organization)';
-  var isHideMenuItem = isDesktop && !isOpenMobileMenu;
+  var isHideMenuItem = isDesktop || !isOpenMobileMenu;
   return /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("div", {

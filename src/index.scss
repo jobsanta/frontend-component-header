@@ -48,13 +48,9 @@ $light-drak: #374151;
   
     .header-logo {
       align-items: center; 
-      justify-content: center; 
+      justify-content: space-between; 
       position: relative;
       width: 100%;
-  
-      @include media-breakpoint-up(lg) {
-        justify-content: space-between; 
-      }
   
       .link-logo {
         margin: 0 !important;

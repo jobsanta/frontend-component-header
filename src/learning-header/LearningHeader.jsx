@@ -47,7 +47,7 @@ const LearningHeader = ({
 
   const fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
   const fullNameEN = 'Film Archive (Public Organization)';
-  const isHideMenuItem = isDesktop && !isOpenMobileMenu;
+  const isHideMenuItem = isDesktop || !isOpenMobileMenu;
 
   return (
     <header className="learning-header">
