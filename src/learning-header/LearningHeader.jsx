@@ -87,18 +87,48 @@ const LearningHeader = ({
       </div>
 
       {!isHideMenuItem && (
-        <div className="mobile-menu">
-          <div className="mobile-nav-link">
-            <a href={`${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`}>
-              {intl.formatMessage(genericMessages.registerSentenceCase)}
-            </a>
+        authenticatedUser ? (
+          <div className="mobile-menu">
+            <div className="mobile-nav-link">
+              <a href={`${getConfig().LMS_BASE_URL}`}>
+                {intl.formatMessage(messages.dashboard)}
+              </a>
+            </div>
+            <div className="mobile-nav-link">
+              <a href={`${getConfig().LMS_BASE_URL}/courses}`}>
+                {intl.formatMessage(messages.courses)}
+              </a>
+            </div>
+            <div className="mobile-nav-link">
+              <a href={`${getConfig().ACCOUNT_PROFILE_URL}/u/${authenticatedUser.username}`}>
+                {intl.formatMessage(messages.profile)}
+              </a>
+            </div>
+            <div className="mobile-nav-link">
+              <a href={`${getConfig().ACCOUNT_SETTINGS_URL}`}>
+                {intl.formatMessage(messages.account)}
+              </a>
+            </div>
+            <div className="mobile-nav-link">
+              <a href={`${getConfig().LOGOUT_URL}`}>
+                {intl.formatMessage(messages.signOut)}
+              </a>
+            </div>
           </div>
-          <div className="mobile-nav-link">
-            <a href={`${getLoginRedirectUrl(global.location.href)}`}>
-              {intl.formatMessage(genericMessages.signInSentenceCase)}
-            </a>
+        ) : (
+          <div className="mobile-menu">
+            <div className="mobile-nav-link">
+              <a href={`${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`}>
+                {intl.formatMessage(genericMessages.registerSentenceCase)}
+              </a>
+            </div>
+            <div className="mobile-nav-link">
+              <a href={`${getLoginRedirectUrl(global.location.href)}`}>
+                {intl.formatMessage(genericMessages.signInSentenceCase)}
+              </a>
+            </div>
           </div>
-        </div>
+        )
       )}
     </header>
   );

@@ -99,7 +99,29 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))), !isHideMenuItem && /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))), !isHideMenuItem && (authenticatedUser ? /*#__PURE__*/React.createElement("div", {
+    className: "mobile-menu"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "mobile-nav-link"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "".concat(getConfig().LMS_BASE_URL)
+  }, intl.formatMessage(messages.dashboard))), /*#__PURE__*/React.createElement("div", {
+    className: "mobile-nav-link"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "".concat(getConfig().LMS_BASE_URL, "/courses}")
+  }, intl.formatMessage(messages.courses))), /*#__PURE__*/React.createElement("div", {
+    className: "mobile-nav-link"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "".concat(getConfig().ACCOUNT_PROFILE_URL, "/u/").concat(authenticatedUser.username)
+  }, intl.formatMessage(messages.profile))), /*#__PURE__*/React.createElement("div", {
+    className: "mobile-nav-link"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "".concat(getConfig().ACCOUNT_SETTINGS_URL)
+  }, intl.formatMessage(messages.account))), /*#__PURE__*/React.createElement("div", {
+    className: "mobile-nav-link"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "".concat(getConfig().LOGOUT_URL)
+  }, intl.formatMessage(messages.signOut)))) : /*#__PURE__*/React.createElement("div", {
     className: "mobile-menu"
   }, /*#__PURE__*/React.createElement("div", {
     className: "mobile-nav-link"
@@ -109,7 +131,7 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "mobile-nav-link"
   }, /*#__PURE__*/React.createElement("a", {
     href: "".concat(getLoginRedirectUrl(global.location.href))
-  }, intl.formatMessage(genericMessages.signInSentenceCase)))));
+  }, intl.formatMessage(genericMessages.signInSentenceCase))))));
 };
 LearningHeader.propTypes = {
   courseOrg: PropTypes.string,

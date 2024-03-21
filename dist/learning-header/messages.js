@@ -1,5 +1,10 @@
 import { defineMessages } from '@edx/frontend-platform/i18n';
 var messages = defineMessages({
+  courses: {
+    id: 'header.menu.courses.label',
+    defaultMessage: 'Discover New',
+    description: 'The text for the user menu Discover New navigation link.'
+  },
   dashboard: {
     id: 'header.menu.dashboard.label',
     defaultMessage: 'Dashboard',
