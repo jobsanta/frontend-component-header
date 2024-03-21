@@ -108,7 +108,7 @@ var LearningHeader = function LearningHeader(_ref2) {
   }, intl.formatMessage(messages.dashboard))), /*#__PURE__*/React.createElement("div", {
     className: "mobile-nav-link"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "".concat(getConfig().LMS_BASE_URL, "/courses}")
+    href: "".concat(getConfig().LMS_BASE_URL, "/courses")
   }, intl.formatMessage(messages.courses))), /*#__PURE__*/React.createElement("div", {
     className: "mobile-nav-link"
   }, /*#__PURE__*/React.createElement("a", {

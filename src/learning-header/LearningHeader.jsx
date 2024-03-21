@@ -95,7 +95,7 @@ const LearningHeader = ({
               </a>
             </div>
             <div className="mobile-nav-link">
-              <a href={`${getConfig().LMS_BASE_URL}/courses}`}>
+              <a href={`${getConfig().LMS_BASE_URL}/courses`}>
                 {intl.formatMessage(messages.courses)}
               </a>
             </div>

@@ -28,13 +28,13 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
     className: "d-none d-md-inline"
   }, username)), /*#__PURE__*/React.createElement(Dropdown.Menu, {
     className: "dropdown-menu-right"
-  }, dashboardMenuItem, /*#__PURE__*/React.createElement(Dropdown.Item, {
+  }, dashboardMenuItem, getConfig().ORDER_HISTORY_URL && /*#__PURE__*/React.createElement(Dropdown.Item, {
+    href: "".concat(getConfig().LMS_BASE_URL, "/courses")
+  }, intl.formatMessage(messages.courses)), /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: "".concat(getConfig().ACCOUNT_PROFILE_URL, "/u/").concat(username)
   }, intl.formatMessage(messages.profile)), /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: getConfig().ACCOUNT_SETTINGS_URL
-  }, intl.formatMessage(messages.account)), getConfig().ORDER_HISTORY_URL && /*#__PURE__*/React.createElement(Dropdown.Item, {
-    href: getConfig().ORDER_HISTORY_URL
-  }, intl.formatMessage(messages.orderHistory)), /*#__PURE__*/React.createElement(Dropdown.Item, {
+  }, intl.formatMessage(messages.account)), /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: getConfig().LOGOUT_URL
   }, intl.formatMessage(messages.signOut)))));
 };
