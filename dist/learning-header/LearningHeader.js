@@ -61,6 +61,7 @@ var LearningHeader = function LearningHeader(_ref2) {
   });
   var fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
   var fullNameEN = 'Film Archive (Public Organization)';
+  var isHideMenuItem = isDesktop && !isOpenMobileMenu;
   return /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("div", {
@@ -68,13 +69,13 @@ var LearningHeader = function LearningHeader(_ref2) {
   }, /*#__PURE__*/React.createElement("a", {
     className: "sr-only sr-only-focusable",
     href: "#main-content"
-  }, intl.formatMessage(messages.skipNavLink)), !isDesktop && /*#__PURE__*/React.createElement(Hamburger, {
+  }, intl.formatMessage(messages.skipNavLink)), /*#__PURE__*/React.createElement("div", {
+    className: "py-2 d-flex header-logo"
+  }, !isDesktop && /*#__PURE__*/React.createElement(Hamburger, {
     size: 40,
     toggled: isOpenMobileMenu,
     toggle: setIsOpenMobileMenu
   }), /*#__PURE__*/React.createElement("div", {
-    className: "py-2 d-flex header-logo"
-  }, /*#__PURE__*/React.createElement("div", {
     className: "d-flex flex-row"
   }, headerLogo, /*#__PURE__*/React.createElement("div", {
     className: "full-name-container"
@@ -95,11 +96,11 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "dropdown-conotainer"
   }, showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
     username: authenticatedUser.username
-  }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)))), isOpenMobileMenu && /*#__PURE__*/React.createElement("div", {
+  }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)))), /*#__PURE__*/React.createElement("div", {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))), !isHideMenuItem && /*#__PURE__*/React.createElement("div", {
     className: "mobile-menu"
   }, /*#__PURE__*/React.createElement("div", {
     className: "mobile-nav-link"

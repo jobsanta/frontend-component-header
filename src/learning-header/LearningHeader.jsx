@@ -47,13 +47,14 @@ const LearningHeader = ({
 
   const fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
   const fullNameEN = 'Film Archive (Public Organization)';
+  const isHideMenuItem = isDesktop && !isOpenMobileMenu;
 
   return (
     <header className="learning-header">
       <div className="header-container container-xl">
         <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>
-        {!isDesktop && <Hamburger size={40} toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
         <div className="py-2 d-flex header-logo">
+          {!isDesktop && <Hamburger size={40} toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
           <div className="d-flex flex-row">
             {headerLogo}
             <div className="full-name-container">
@@ -77,27 +78,28 @@ const LearningHeader = ({
           </div>
         </div>
       </div>
-      { isOpenMobileMenu && (
-        <div className="banner">
-          <div className="banner-container">
-            <h2>{fullNameTH}</h2>
-            <h1>E - Learning</h1>
+
+      <div className="banner">
+        <div className="banner-container">
+          <h2>{fullNameTH}</h2>
+          <h1>E - Learning</h1>
+        </div>
+      </div>
+
+      {!isHideMenuItem && (
+        <div className="mobile-menu">
+          <div className="mobile-nav-link">
+            <a href={`${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`}>
+              {intl.formatMessage(genericMessages.registerSentenceCase)}
+            </a>
+          </div>
+          <div className="mobile-nav-link">
+            <a href={`${getLoginRedirectUrl(global.location.href)}`}>
+              {intl.formatMessage(genericMessages.signInSentenceCase)}
+            </a>
           </div>
         </div>
       )}
-
-      <div className="mobile-menu">
-        <div className="mobile-nav-link">
-          <a href={`${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`}>
-            {intl.formatMessage(genericMessages.registerSentenceCase)}
-          </a>
-        </div>
-        <div className="mobile-nav-link">
-          <a href={`${getLoginRedirectUrl(global.location.href)}`}>
-            {intl.formatMessage(genericMessages.signInSentenceCase)}
-          </a>
-        </div>
-      </div>
     </header>
   );
 };
