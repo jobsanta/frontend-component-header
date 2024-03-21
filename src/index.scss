@@ -110,6 +110,14 @@ $light-drak: #374151;
       .dropdown-conotainer {
         display: flex;
 
+        .dropdown-menu  {
+          display: none;
+
+          @include media-breakpoint-up(lg) {
+            display: block;
+          }
+        }
+
         .user-dropdown {
           .btn {
             height: 3rem;
