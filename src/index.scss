@@ -2,6 +2,12 @@ $spacer: 1rem;
 $blue: #007db8;
 $white: #fff;
 
+$primary: #15376D;
+$primary-light: #F2F7F8;
+
+$drak: #111827;
+$light-drak: #374151;
+
 @import './Menu/menu.scss';
 @import './studio-header/StudioHeader.scss';
 
@@ -38,12 +44,6 @@ $white: #fff;
 
     @include media-breakpoint-up(lg) {
       height: 80px;
-    }
-
-    .mobile-menu {
-      @include media-breakpoint-up(lg) {
-        display: none; 
-      }
     }
   
     .header-logo {
@@ -175,6 +175,32 @@ $white: #fff;
           font-size: revert;
         }
       }
+    }
+  }
+
+  .mobile-menu {
+    position: absolute;
+    left: 0;
+    top: 48px;
+    z-index: 9999;
+    margin: 0;
+    border: none;
+    border-bottom: 2px solid $primary;
+    border-top: 2px solid $primary;
+    width: 100%;
+    .mobile-nav-link {
+        a {
+            font-weight: normal;
+            padding: 16px;
+            font-size: 14px;
+            line-height: 20px;
+            color: $light-drak;
+            border: none;
+            &:hover, &.active {
+                background: $primary-light;
+                color: $drak;
+            }
+        }
     }
   }
 }

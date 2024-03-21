@@ -12,11 +12,14 @@ import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getConfig } from '@edx/frontend-platform';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import { getLoginRedirectUrl } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
 import { Squash as Hamburger } from 'hamburger-react';
+import { useMediaQuery } from 'react-responsive';
 import AnonymousUserMenu from './AnonymousUserMenu';
 import AuthenticatedUserDropdown from './AuthenticatedUserDropdown';
 import messages from './messages';
+import genericMessages from '../generic/messages';
 var LinkedLogo = function LinkedLogo(_ref) {
   var href = _ref.href,
     src = _ref.src,
@@ -47,6 +50,9 @@ var LearningHeader = function LearningHeader(_ref2) {
     _useState2 = _slicedToArray(_useState, 2),
     isOpenMobileMenu = _useState2[0],
     setIsOpenMobileMenu = _useState2[1];
+  var isDesktop = useMediaQuery({
+    query: '(min-width: 992px)'
+  });
   var headerLogo = /*#__PURE__*/React.createElement(LinkedLogo, {
     className: "link-logo",
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard"),
@@ -58,25 +64,25 @@ var LearningHeader = function LearningHeader(_ref2) {
   return /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "header-container"
+    className: "header-container container-xl"
   }, /*#__PURE__*/React.createElement("a", {
     className: "sr-only sr-only-focusable",
     href: "#main-content"
-  }, intl.formatMessage(messages.skipNavLink)), /*#__PURE__*/React.createElement(Hamburger, {
-    className: "mobile-menu",
+  }, intl.formatMessage(messages.skipNavLink)), !isDesktop && /*#__PURE__*/React.createElement(Hamburger, {
+    size: 40,
     toggled: isOpenMobileMenu,
     toggle: setIsOpenMobileMenu
   }), /*#__PURE__*/React.createElement("div", {
-    className: "container-xl py-2 d-flex header-logo"
+    className: "py-2 d-flex header-logo"
   }, /*#__PURE__*/React.createElement("div", {
     className: "d-flex flex-row"
   }, headerLogo, /*#__PURE__*/React.createElement("div", {
     className: "full-name-container"
   }, /*#__PURE__*/React.createElement("div", {
     className: "full-name-th"
-  }, "$", fullNameTH), /*#__PURE__*/React.createElement("div", {
+  }, fullNameTH), /*#__PURE__*/React.createElement("div", {
     className: "full-name-en"
-  }, "$", fullNameEN)), /*#__PURE__*/React.createElement("div", {
+  }, fullNameEN)), /*#__PURE__*/React.createElement("div", {
     className: "flex-grow-1 course-title-lockup",
     style: {
       lineHeight: 1
@@ -91,7 +97,17 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))));
+  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))), /*#__PURE__*/React.createElement("div", {
+    className: "mobile-menu"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "mobile-nav-link"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "".concat(getConfig().LMS_BASE_URL, "/register?next=").concat(encodeURIComponent(global.location.href))
+  }, intl.formatMessage(genericMessages.registerSentenceCase))), /*#__PURE__*/React.createElement("div", {
+    className: "mobile-nav-link"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "".concat(getLoginRedirectUrl(global.location.href))
+  }, intl.formatMessage(genericMessages.signInSentenceCase)))));
 };
 LearningHeader.propTypes = {
   courseOrg: PropTypes.string,
