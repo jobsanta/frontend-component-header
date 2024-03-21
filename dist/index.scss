@@ -50,6 +50,7 @@ $light-drak: #374151;
       align-items: center; 
       justify-content: center; 
       position: relative;
+      width: 100%;
   
       @include media-breakpoint-up(lg) {
         justify-content: space-between; 
@@ -109,28 +110,32 @@ $light-drak: #374151;
           padding-bottom: 0.1rem;
         }
       }
-    
-      .user-dropdown {
-        .btn {
-          height: 3rem;
-          // @media (max-width: -1 + map-get($grid-breakpoints, "sm")) {
-          //   padding: 0 0.5rem;
-          // }
+
+      .dropdown-conotainer {
+        display: flex;
+
+        .user-dropdown {
+          .btn {
+            height: 3rem;
+            // @media (max-width: -1 + map-get($grid-breakpoints, "sm")) {
+            //   padding: 0 0.5rem;
+            // }
+          }
         }
-      }
-    
-      .login-button {
-        display: none;
-    
-        @include media-breakpoint-up(lg) {
-          display: unset;
+      
+        .login-button {
+          display: none;
+      
+          @include media-breakpoint-up(lg) {
+            display: unset;
+          }
+      
+          height: 40px;
+          padding: 9px 17px;
+          font-size: 0.875rem;
+          border-radius: 6px;
+          font-weight: 500;
         }
-    
-        height: 40px;
-        padding: 9px 17px;
-        font-size: 0.875rem;
-        border-radius: 6px;
-        font-weight: 500;
       }
     }
   }
@@ -190,12 +195,15 @@ $light-drak: #374151;
     width: 100%;
     .mobile-nav-link {
         a {
+            display: flex;
+            height: 52px;
             font-weight: normal;
             padding: 16px;
             font-size: 14px;
             line-height: 20px;
             color: $light-drak;
             border: none;
+            background-color: $white;
             &:hover, &.active {
                 background: $primary-light;
                 color: $drak;

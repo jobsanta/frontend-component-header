@@ -91,9 +91,11 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "d-block m-0 font-weight-bold course-title"
   }, courseTitle), /*#__PURE__*/React.createElement("span", {
     className: "d-block small m-0"
-  }, courseOrg, " ", courseNumber))), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
+  }, courseOrg, " ", courseNumber))), /*#__PURE__*/React.createElement("div", {
+    className: "dropdown-conotainer"
+  }, showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
     username: authenticatedUser.username
-  }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null))), /*#__PURE__*/React.createElement("div", {
+  }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)))), isOpenMobileMenu && /*#__PURE__*/React.createElement("div", {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"

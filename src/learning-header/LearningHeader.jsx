@@ -65,22 +65,26 @@ const LearningHeader = ({
               <span className="d-block small m-0">{courseOrg} {courseNumber}</span>
             </div>
           </div>
-          {showUserDropdown && authenticatedUser && (
-          <AuthenticatedUserDropdown
-            username={authenticatedUser.username}
-          />
-          )}
-          {showUserDropdown && !authenticatedUser && (
-          <AnonymousUserMenu />
-          )}
+          <div className="dropdown-conotainer">
+            {showUserDropdown && authenticatedUser && (
+            <AuthenticatedUserDropdown
+              username={authenticatedUser.username}
+            />
+            )}
+            {showUserDropdown && !authenticatedUser && (
+            <AnonymousUserMenu />
+            )}
+          </div>
         </div>
       </div>
-      <div className="banner">
-        <div className="banner-container">
-          <h2>{fullNameTH}</h2>
-          <h1>E - Learning</h1>
+      { isOpenMobileMenu && (
+        <div className="banner">
+          <div className="banner-container">
+            <h2>{fullNameTH}</h2>
+            <h1>E - Learning</h1>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="mobile-menu">
         <div className="mobile-nav-link">
