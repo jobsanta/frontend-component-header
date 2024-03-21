@@ -32,11 +32,18 @@ $white: #fff;
   flex-direction: column;
 
   .header-container {
+    display: flex;
     height: 48px;
     justify-content: center;
 
     @include media-breakpoint-up(lg) {
       height: 80px;
+    }
+
+    .mobile-menu {
+      @include media-breakpoint-up(lg) {
+        display: none; 
+      }
     }
   
     .header-logo {
