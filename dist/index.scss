@@ -179,6 +179,37 @@ $light-drak: #374151;
     }
   }
 
+  .hamburger-react {
+    width: 20px;
+    height: 17px;
+
+    div div {
+      height: 2px;
+      width: 20px;
+    }
+
+    :first-child {
+      transform: translateY(6px);
+      div {
+        top: 0;
+      }
+    }
+
+    :nth-child(2) {
+      div {
+        top: 6px;
+      }
+    }
+
+    :last-child {
+      transform: translateY(-6px);
+      div {
+        top: 12px;
+      }
+    }
+    
+  }
+
   .mobile-menu {
     position: absolute;
     left: 0;

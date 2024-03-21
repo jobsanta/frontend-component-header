@@ -54,7 +54,7 @@ const LearningHeader = ({
       <div className="header-container container-xl">
         <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>
         <div className="py-2 d-flex header-logo">
-          {!isDesktop && <Hamburger size={40} toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
+          {!isDesktop && <Hamburger toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
           <div className="d-flex flex-row">
             {headerLogo}
             <div className="full-name-container">

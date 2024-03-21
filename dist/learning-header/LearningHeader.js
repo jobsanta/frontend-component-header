@@ -72,7 +72,6 @@ var LearningHeader = function LearningHeader(_ref2) {
   }, intl.formatMessage(messages.skipNavLink)), /*#__PURE__*/React.createElement("div", {
     className: "py-2 d-flex header-logo"
   }, !isDesktop && /*#__PURE__*/React.createElement(Hamburger, {
-    size: 40,
     toggled: isOpenMobileMenu,
     toggle: setIsOpenMobileMenu
   }), /*#__PURE__*/React.createElement("div", {
