@@ -109,6 +109,7 @@ $light-drak: #374151;
 
       .dropdown-conotainer {
         display: flex;
+        align-items: center;
 
         .dropdown-menu  {
           display: none;
@@ -119,11 +120,14 @@ $light-drak: #374151;
         }
 
         .user-dropdown {
+          display: none;
+
+          @include media-breakpoint-up(lg) {
+            display: block;
+          }
+
           .btn {
             height: 3rem;
-            // @media (max-width: -1 + map-get($grid-breakpoints, "sm")) {
-            //   padding: 0 0.5rem;
-            // }
           }
         }
       
