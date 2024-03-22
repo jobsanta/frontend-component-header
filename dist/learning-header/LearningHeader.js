@@ -62,7 +62,7 @@ var LearningHeader = function LearningHeader(_ref2) {
   var fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
   var fullNameEN = 'Film Archive (Public Organization)';
   var isHideMenuItem = isDesktop || !isOpenMobileMenu;
-  return /*#__PURE__*/React.createElement("header", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("div", {
     className: "header-container container-xl"
@@ -131,7 +131,9 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "mobile-nav-link"
   }, /*#__PURE__*/React.createElement("a", {
     href: "".concat(getLoginRedirectUrl(global.location.href))
-  }, intl.formatMessage(genericMessages.signInSentenceCase))))));
+  }, intl.formatMessage(genericMessages.signInSentenceCase)))))), /*#__PURE__*/React.createElement("div", {
+    className: "alocate-space"
+  }));
 };
 LearningHeader.propTypes = {
   courseOrg: PropTypes.string,

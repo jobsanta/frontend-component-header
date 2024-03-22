@@ -50,87 +50,90 @@ const LearningHeader = ({
   const isHideMenuItem = isDesktop || !isOpenMobileMenu;
 
   return (
-    <header className="learning-header">
-      <div className="header-container container-xl">
-        <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>
-        <div className="py-2 d-flex header-logo">
-          {!isDesktop && <Hamburger toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
-          <div className="d-flex flex-row">
-            {headerLogo}
-            <div className="full-name-container">
-              <div className="full-name-th">{fullNameTH}</div>
-              <div className="full-name-en">{fullNameEN}</div>
+    <>
+      <header className="learning-header">
+        <div className="header-container container-xl">
+          <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>
+          <div className="py-2 d-flex header-logo">
+            {!isDesktop && <Hamburger toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
+            <div className="d-flex flex-row">
+              {headerLogo}
+              <div className="full-name-container">
+                <div className="full-name-th">{fullNameTH}</div>
+                <div className="full-name-en">{fullNameEN}</div>
+              </div>
+              <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
+                <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
+                <span className="d-block small m-0">{courseOrg} {courseNumber}</span>
+              </div>
             </div>
-            <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
-              <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
-              <span className="d-block small m-0">{courseOrg} {courseNumber}</span>
+            <div className="dropdown-conotainer">
+              {showUserDropdown && authenticatedUser && (
+              <AuthenticatedUserDropdown
+                username={authenticatedUser.username}
+              />
+              )}
+              {showUserDropdown && !authenticatedUser && (
+              <AnonymousUserMenu />
+              )}
             </div>
-          </div>
-          <div className="dropdown-conotainer">
-            {showUserDropdown && authenticatedUser && (
-            <AuthenticatedUserDropdown
-              username={authenticatedUser.username}
-            />
-            )}
-            {showUserDropdown && !authenticatedUser && (
-            <AnonymousUserMenu />
-            )}
           </div>
         </div>
-      </div>
 
-      <div className="banner">
-        <div className="banner-container">
-          <h2>{fullNameTH}</h2>
-          <h1>E - Learning</h1>
+        <div className="banner">
+          <div className="banner-container">
+            <h2>{fullNameTH}</h2>
+            <h1>E - Learning</h1>
+          </div>
         </div>
-      </div>
 
-      {!isHideMenuItem && (
-        authenticatedUser ? (
-          <div className="mobile-menu">
-            <div className="mobile-nav-link">
-              <a href={`${getConfig().LMS_BASE_URL}`}>
-                {intl.formatMessage(messages.dashboard)}
-              </a>
+        {!isHideMenuItem && (
+          authenticatedUser ? (
+            <div className="mobile-menu">
+              <div className="mobile-nav-link">
+                <a href={`${getConfig().LMS_BASE_URL}`}>
+                  {intl.formatMessage(messages.dashboard)}
+                </a>
+              </div>
+              <div className="mobile-nav-link">
+                <a href={`${getConfig().LMS_BASE_URL}/courses`}>
+                  {intl.formatMessage(messages.courses)}
+                </a>
+              </div>
+              <div className="mobile-nav-link">
+                <a href={`${getConfig().ACCOUNT_PROFILE_URL}/u/${authenticatedUser.username}`}>
+                  {intl.formatMessage(messages.profile)}
+                </a>
+              </div>
+              <div className="mobile-nav-link">
+                <a href={`${getConfig().ACCOUNT_SETTINGS_URL}`}>
+                  {intl.formatMessage(messages.account)}
+                </a>
+              </div>
+              <div className="mobile-nav-link">
+                <a href={`${getConfig().LOGOUT_URL}`}>
+                  {intl.formatMessage(messages.signOut)}
+                </a>
+              </div>
             </div>
-            <div className="mobile-nav-link">
-              <a href={`${getConfig().LMS_BASE_URL}/courses`}>
-                {intl.formatMessage(messages.courses)}
-              </a>
+          ) : (
+            <div className="mobile-menu">
+              <div className="mobile-nav-link">
+                <a href={`${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`}>
+                  {intl.formatMessage(genericMessages.registerSentenceCase)}
+                </a>
+              </div>
+              <div className="mobile-nav-link">
+                <a href={`${getLoginRedirectUrl(global.location.href)}`}>
+                  {intl.formatMessage(genericMessages.signInSentenceCase)}
+                </a>
+              </div>
             </div>
-            <div className="mobile-nav-link">
-              <a href={`${getConfig().ACCOUNT_PROFILE_URL}/u/${authenticatedUser.username}`}>
-                {intl.formatMessage(messages.profile)}
-              </a>
-            </div>
-            <div className="mobile-nav-link">
-              <a href={`${getConfig().ACCOUNT_SETTINGS_URL}`}>
-                {intl.formatMessage(messages.account)}
-              </a>
-            </div>
-            <div className="mobile-nav-link">
-              <a href={`${getConfig().LOGOUT_URL}`}>
-                {intl.formatMessage(messages.signOut)}
-              </a>
-            </div>
-          </div>
-        ) : (
-          <div className="mobile-menu">
-            <div className="mobile-nav-link">
-              <a href={`${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`}>
-                {intl.formatMessage(genericMessages.registerSentenceCase)}
-              </a>
-            </div>
-            <div className="mobile-nav-link">
-              <a href={`${getLoginRedirectUrl(global.location.href)}`}>
-                {intl.formatMessage(genericMessages.signInSentenceCase)}
-              </a>
-            </div>
-          </div>
-        )
-      )}
-    </header>
+          )
+        )}
+      </header>
+      <div className="alocate-space" />
+    </>
   );
 };
 

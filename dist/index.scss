@@ -32,8 +32,12 @@ $light-drak: #374151;
   }
 }
 
-main {
-  margin-top: 140px;
+.alocate-space {
+  height: 128px;
+
+  @include media-breakpoint-up(lg) {
+    height: 220px;
+  }
 }
 
 .learning-header {
