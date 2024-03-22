@@ -1,17 +1,14 @@
 import React, { useContext } from 'react';
-import Responsive from 'react-responsive';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { AppContext } from '@edx/frontend-platform/react';
 import {
   APP_CONFIG_INITIALIZED,
   ensureConfig,
   mergeConfig,
-  getConfig,
   subscribe,
 } from '@edx/frontend-platform';
 
-import DesktopHeader from './DesktopHeader';
-import MobileHeader from './MobileHeader';
+import LearningHeader from './learning-header/LearningHeader';
 
 import messages from './Header.messages';
 
@@ -32,14 +29,6 @@ subscribe(APP_CONFIG_INITIALIZED, () => {
 
 const Header = ({ intl }) => {
   const { authenticatedUser, config } = useContext(AppContext);
-
-  const mainMenu = [
-    {
-      type: 'item',
-      href: `${config.LMS_BASE_URL}/dashboard`,
-      content: intl.formatMessage(messages['header.links.courses']),
-    },
-  ];
 
   const orderHistoryItem = {
     type: 'item',
@@ -75,41 +64,7 @@ const Header = ({ intl }) => {
     userMenu.splice(-1, 0, orderHistoryItem);
   }
 
-  const loggedOutItems = [
-    {
-      type: 'item',
-      href: config.LOGIN_URL,
-      content: intl.formatMessage(messages['header.user.menu.login']),
-    },
-    {
-      type: 'item',
-      href: `${config.LMS_BASE_URL}/register`,
-      content: intl.formatMessage(messages['header.user.menu.register']),
-    },
-  ];
-
-  const props = {
-    logo: config.LOGO_URL,
-    logoAltText: config.SITE_NAME,
-    logoDestination: `${config.LMS_BASE_URL}/dashboard`,
-    loggedIn: authenticatedUser !== null,
-    username: authenticatedUser !== null ? authenticatedUser.username : null,
-    avatar: authenticatedUser !== null ? authenticatedUser.avatar : null,
-    mainMenu: getConfig().AUTHN_MINIMAL_HEADER ? [] : mainMenu,
-    userMenu: getConfig().AUTHN_MINIMAL_HEADER ? [] : userMenu,
-    loggedOutItems: getConfig().AUTHN_MINIMAL_HEADER ? [] : loggedOutItems,
-  };
-
-  return (
-    <>
-      <Responsive maxWidth={768}>
-        <MobileHeader {...props} />
-      </Responsive>
-      <Responsive minWidth={769}>
-        <DesktopHeader {...props} />
-      </Responsive>
-    </>
-  );
+  return <LearningHeader />;
 };
 
 Header.propTypes = {
