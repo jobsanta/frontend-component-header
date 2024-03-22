@@ -6,6 +6,7 @@ import { getLoginRedirectUrl } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
 import { Squash as Hamburger } from 'hamburger-react';
 import { useMediaQuery } from 'react-responsive';
+import Cookies from 'js-cookie';
 
 import AnonymousUserMenu from './AnonymousUserMenu';
 import AuthenticatedUserDropdown from './AuthenticatedUserDropdown';
@@ -49,6 +50,16 @@ const LearningHeader = ({
   const fullNameEN = 'Film Archive (Public Organization)';
   const isHideMenuItem = isDesktop || !isOpenMobileMenu;
 
+  const domain = window.location.hostname.replace('apps', '');
+
+  const language = Cookies.get('openedx-language-preference', { domain }) ?? 'en';
+
+  const handleChangeLanguage = (event) => {
+    const newLanguage = event.target.value ?? 'en';
+    Cookies.set('openedx-language-preference', newLanguage, { domain });
+    window.location.reload();
+  };
+
   return (
     <>
       <header className="learning-header">
@@ -68,6 +79,10 @@ const LearningHeader = ({
               </div>
             </div>
             <div className="dropdown-conotainer">
+              <select className="language-selector" value={language} name="language" onChange={handleChangeLanguage}>
+                <option value="en">EN</option>
+                <option value="th">TH</option>
+              </select>
               {showUserDropdown && authenticatedUser && (
               <AuthenticatedUserDropdown
                 username={authenticatedUser.username}

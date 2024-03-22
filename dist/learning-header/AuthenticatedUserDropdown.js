@@ -5,37 +5,14 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { getConfig } from '@edx/frontend-platform';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { Dropdown } from '@openedx/paragon';
-import Cookies from 'js-cookie';
 import messages from './messages';
 var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
-  var _Cookies$get;
   var intl = _ref.intl,
     username = _ref.username;
   var dashboardMenuItem = /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard")
   }, intl.formatMessage(messages.dashboard));
-  var domain = window.location.hostname.replace('apps', '');
-  var language = (_Cookies$get = Cookies.get('openedx-language-preference', {
-    domain: domain
-  })) !== null && _Cookies$get !== void 0 ? _Cookies$get : 'en';
-  var handleChangeLanguage = function handleChangeLanguage(event) {
-    var _event$target$value;
-    var newLanguage = (_event$target$value = event.target.value) !== null && _event$target$value !== void 0 ? _event$target$value : 'en';
-    Cookies.set('openedx-language-preference', newLanguage, {
-      domain: domain
-    });
-    window.location.reload();
-  };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("select", {
-    className: "language-selector",
-    value: language,
-    name: "language",
-    onChange: handleChangeLanguage
-  }, /*#__PURE__*/React.createElement("option", {
-    value: "en"
-  }, "EN"), /*#__PURE__*/React.createElement("option", {
-    value: "th"
-  }, "TH")), /*#__PURE__*/React.createElement(Dropdown, {
+  return /*#__PURE__*/React.createElement(Dropdown, {
     className: "user-dropdown ml-3"
   }, /*#__PURE__*/React.createElement(Dropdown.Toggle, {
     variant: "outline-primary"
@@ -56,7 +33,7 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
     href: getConfig().ACCOUNT_SETTINGS_URL
   }, intl.formatMessage(messages.account)), /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: getConfig().LOGOUT_URL
-  }, intl.formatMessage(messages.signOut)))));
+  }, intl.formatMessage(messages.signOut))));
 };
 AuthenticatedUserDropdown.propTypes = {
   intl: intlShape.isRequired,

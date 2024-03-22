@@ -16,6 +16,7 @@ import { getLoginRedirectUrl } from '@edx/frontend-platform/auth';
 import { AppContext } from '@edx/frontend-platform/react';
 import { Squash as Hamburger } from 'hamburger-react';
 import { useMediaQuery } from 'react-responsive';
+import Cookies from 'js-cookie';
 import AnonymousUserMenu from './AnonymousUserMenu';
 import AuthenticatedUserDropdown from './AuthenticatedUserDropdown';
 import messages from './messages';
@@ -39,6 +40,7 @@ LinkedLogo.propTypes = {
   alt: PropTypes.string.isRequired
 };
 var LearningHeader = function LearningHeader(_ref2) {
+  var _Cookies$get;
   var courseOrg = _ref2.courseOrg,
     courseNumber = _ref2.courseNumber,
     courseTitle = _ref2.courseTitle,
@@ -62,6 +64,18 @@ var LearningHeader = function LearningHeader(_ref2) {
   var fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
   var fullNameEN = 'Film Archive (Public Organization)';
   var isHideMenuItem = isDesktop || !isOpenMobileMenu;
+  var domain = window.location.hostname.replace('apps', '');
+  var language = (_Cookies$get = Cookies.get('openedx-language-preference', {
+    domain: domain
+  })) !== null && _Cookies$get !== void 0 ? _Cookies$get : 'en';
+  var handleChangeLanguage = function handleChangeLanguage(event) {
+    var _event$target$value;
+    var newLanguage = (_event$target$value = event.target.value) !== null && _event$target$value !== void 0 ? _event$target$value : 'en';
+    Cookies.set('openedx-language-preference', newLanguage, {
+      domain: domain
+    });
+    window.location.reload();
+  };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("div", {
@@ -93,7 +107,16 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "d-block small m-0"
   }, courseOrg, " ", courseNumber))), /*#__PURE__*/React.createElement("div", {
     className: "dropdown-conotainer"
-  }, showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
+  }, /*#__PURE__*/React.createElement("select", {
+    className: "language-selector",
+    value: language,
+    name: "language",
+    onChange: handleChangeLanguage
+  }, /*#__PURE__*/React.createElement("option", {
+    value: "en"
+  }, "EN"), /*#__PURE__*/React.createElement("option", {
+    value: "th"
+  }, "TH")), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
     username: authenticatedUser.username
   }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)))), /*#__PURE__*/React.createElement("div", {
     className: "banner"
