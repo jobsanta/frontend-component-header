@@ -32,10 +32,17 @@ $light-drak: #374151;
   }
 }
 
+.main-content {
+  margin-top: 140px;
+}
+
 .learning-header {
   min-width: 0;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  width: 100%;
+  background-color: $white;
 
   .header-container {
     display: flex;
