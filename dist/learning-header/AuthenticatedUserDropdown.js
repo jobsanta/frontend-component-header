@@ -25,7 +25,7 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
     className: "d-none d-md-inline"
   }, username)), /*#__PURE__*/React.createElement(Dropdown.Menu, {
     className: "dropdown-menu-right"
-  }, dashboardMenuItem, getConfig().ORDER_HISTORY_URL && /*#__PURE__*/React.createElement(Dropdown.Item, {
+  }, dashboardMenuItem, /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: "".concat(getConfig().LMS_BASE_URL, "/courses")
   }, intl.formatMessage(messages.courses)), /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: "".concat(getConfig().ACCOUNT_PROFILE_URL, "/u/").concat(username)
