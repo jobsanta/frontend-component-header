@@ -14,14 +14,16 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
   var dashboardMenuItem = /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard")
   }, intl.formatMessage(messages.dashboard));
+  var domain = process.env.SESSION_COOKIE_DOMAIN;
   var language = (_Cookies$get = Cookies.get('openedx-language-preference', {
-    domain: process.env.SESSION_COOKIE_DOMAIN
+    domain: domain
   })) !== null && _Cookies$get !== void 0 ? _Cookies$get : 'en';
+  console.log('SESSION_COOKIE_DOMAIN', process.env.SESSION_COOKIE_DOMAIN);
   var handleChangeLanguage = function handleChangeLanguage(event) {
     var _event$target$value;
     var newLanguage = (_event$target$value = event.target.value) !== null && _event$target$value !== void 0 ? _event$target$value : 'en';
     Cookies.set('openedx-language-preference', newLanguage, {
-      domain: process.env.SESSION_COOKIE_DOMAIN
+      domain: domain
     });
     window.location.reload();
   };

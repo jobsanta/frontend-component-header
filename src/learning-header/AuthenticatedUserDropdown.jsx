@@ -17,11 +17,15 @@ const AuthenticatedUserDropdown = ({ intl, username }) => {
     </Dropdown.Item>
   );
 
-  const language = Cookies.get('openedx-language-preference', { domain: process.env.SESSION_COOKIE_DOMAIN }) ?? 'en';
+  const domain = process.env.SESSION_COOKIE_DOMAIN;
+
+  const language = Cookies.get('openedx-language-preference', { domain }) ?? 'en';
+
+  console.log('SESSION_COOKIE_DOMAIN', process.env.SESSION_COOKIE_DOMAIN);
 
   const handleChangeLanguage = (event) => {
     const newLanguage = event.target.value ?? 'en';
-    Cookies.set('openedx-language-preference', newLanguage, { domain: process.env.SESSION_COOKIE_DOMAIN });
+    Cookies.set('openedx-language-preference', newLanguage, { domain });
     window.location.reload();
   };
 
