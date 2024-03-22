@@ -20,7 +20,7 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
   var handleChangeLanguage = function handleChangeLanguage(event) {
     var _event$target$value;
     var newLanguage = (_event$target$value = event.target.value) !== null && _event$target$value !== void 0 ? _event$target$value : 'en';
-    Cookies.set(newLanguage, {
+    Cookies.set('openedx-language-preference', newLanguage, {
       domain: process.env.SESSION_COOKIE_DOMAIN
     });
     window.location.reload();
