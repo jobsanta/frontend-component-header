@@ -17,11 +17,9 @@ const AuthenticatedUserDropdown = ({ intl, username }) => {
     </Dropdown.Item>
   );
 
-  const domain = process.env.SESSION_COOKIE_DOMAIN;
+  const domain = window.location.hostname.replace('apps', '');
 
   const language = Cookies.get('openedx-language-preference', { domain }) ?? 'en';
-
-  console.log('SESSION_COOKIE_DOMAIN', process.env.SESSION_COOKIE_DOMAIN);
 
   const handleChangeLanguage = (event) => {
     const newLanguage = event.target.value ?? 'en';
