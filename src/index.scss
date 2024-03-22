@@ -11,6 +11,11 @@ $light-drak: #374151;
 @import './Menu/menu.scss';
 @import './studio-header/StudioHeader.scss';
 
+// disable footer
+footer {
+  display: none !important;
+}
+
 .dropdown-item a {
   text-decoration: none;
 }
