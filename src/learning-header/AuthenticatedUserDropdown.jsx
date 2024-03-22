@@ -6,6 +6,7 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { getConfig } from '@edx/frontend-platform';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { Dropdown } from '@openedx/paragon';
+import Cookies from 'js-cookie';
 
 import messages from './messages';
 
@@ -16,9 +17,20 @@ const AuthenticatedUserDropdown = ({ intl, username }) => {
     </Dropdown.Item>
   );
 
+  const language = Cookies.get('openedx-language-preference', { domain: process.env.SESSION_COOKIE_DOMAIN }) ?? 'en';
+
+  const handleChangeLanguage = (event) => {
+    const newLanguage = event.target.value ?? 'en';
+    Cookies.set(newLanguage, { domain: process.env.SESSION_COOKIE_DOMAIN });
+    window.location.reload();
+  };
+
   return (
     <>
-      <a className="text-gray-700" href={`${getConfig().SUPPORT_URL}`}>{intl.formatMessage(messages.help)}</a>
+      <select className="language-selector" value={language} name="language" onChange={handleChangeLanguage}>
+        <option value="en">EN</option>
+        <option value="th">TH</option>
+      </select>
       <Dropdown className="user-dropdown ml-3">
         <Dropdown.Toggle variant="outline-primary">
           <FontAwesomeIcon icon={faUserCircle} className="d-md-none" size="lg" />
