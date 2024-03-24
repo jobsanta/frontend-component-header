@@ -66,6 +66,9 @@ const LearningHeader = ({
       && !(
         event.target.parentElement
         && event.target.parentElement.classList.contains('hamburger-react')
+      ) && !(
+        event.target.parentElement?.parentElement
+        && event.target.parentElement.parentElement.classList.contains('hamburger-react')
       ) && isOpenMobileMenu
     ) {
       setIsOpenMobileMenu(false);

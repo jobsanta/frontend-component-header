@@ -77,7 +77,8 @@ var LearningHeader = function LearningHeader(_ref2) {
     window.location.reload();
   };
   document.addEventListener('click', function (event) {
-    if (!event.target.classList.contains('hamburger-react') && !(event.target.parentElement && event.target.parentElement.classList.contains('hamburger-react')) && isOpenMobileMenu) {
+    var _event$target$parentE;
+    if (!event.target.classList.contains('hamburger-react') && !(event.target.parentElement && event.target.parentElement.classList.contains('hamburger-react')) && !((_event$target$parentE = event.target.parentElement) !== null && _event$target$parentE !== void 0 && _event$target$parentE.parentElement && event.target.parentElement.parentElement.classList.contains('hamburger-react')) && isOpenMobileMenu) {
       setIsOpenMobileMenu(false);
     }
   });
