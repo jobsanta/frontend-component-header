@@ -8,7 +8,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { getConfig } from '@edx/frontend-platform';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
@@ -55,6 +55,7 @@ var LearningHeader = function LearningHeader(_ref2) {
   var isDesktop = useMediaQuery({
     query: '(min-width: 992px)'
   });
+  var ref = useRef();
   var headerLogo = /*#__PURE__*/React.createElement(LinkedLogo, {
     className: "link-logo",
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard"),
@@ -76,6 +77,17 @@ var LearningHeader = function LearningHeader(_ref2) {
     });
     window.location.reload();
   };
+  var handleClick = useCallback(function (event) {
+    if (ref.current && !ref.current.contains(event.target) && isOpenMobileMenu) {
+      setIsOpenMobileMenu(false);
+    }
+  }, [isOpenMobileMenu]);
+  useEffect(function () {
+    document.addEventListener('click', handleClick);
+    return function () {
+      document.removeEventListener('click', handleClick);
+    };
+  }, [handleClick]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("div", {
@@ -86,6 +98,7 @@ var LearningHeader = function LearningHeader(_ref2) {
   }, intl.formatMessage(messages.skipNavLink)), /*#__PURE__*/React.createElement("div", {
     className: "py-2 d-flex header-logo"
   }, !isDesktop && /*#__PURE__*/React.createElement(Hamburger, {
+    ref: ref,
     toggled: isOpenMobileMenu,
     toggle: setIsOpenMobileMenu
   }), /*#__PURE__*/React.createElement("div", {
