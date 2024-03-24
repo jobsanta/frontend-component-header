@@ -54,14 +54,19 @@ const LearningHeader = ({
 
   const language = Cookies.get('openedx-language-preference', { domain }) ?? 'en';
 
+  const handleChangeLanguage = (event) => {
+    const newLanguage = event.target.value ?? 'en';
+    Cookies.set('openedx-language-preference', newLanguage, { domain });
+    window.location.reload();
+  };
+
   document.addEventListener('click', (event) => {
     if (
       !event.target.classList.contains('hamburger-react')
       && !(
         event.target.parentElement
         && event.target.parentElement.classList.contains('hamburger-react')
-      )
-      && isOpenMobileMenu
+      ) && isOpenMobileMenu
     ) {
       setIsOpenMobileMenu(false);
     }

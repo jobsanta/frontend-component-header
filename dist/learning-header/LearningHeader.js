@@ -68,6 +68,14 @@ var LearningHeader = function LearningHeader(_ref2) {
   var language = (_Cookies$get = Cookies.get('openedx-language-preference', {
     domain: domain
   })) !== null && _Cookies$get !== void 0 ? _Cookies$get : 'en';
+  var handleChangeLanguage = function handleChangeLanguage(event) {
+    var _event$target$value;
+    var newLanguage = (_event$target$value = event.target.value) !== null && _event$target$value !== void 0 ? _event$target$value : 'en';
+    Cookies.set('openedx-language-preference', newLanguage, {
+      domain: domain
+    });
+    window.location.reload();
+  };
   document.addEventListener('click', function (event) {
     if (!event.target.classList.contains('hamburger-react') && !(event.target.parentElement && event.target.parentElement.classList.contains('hamburger-react')) && isOpenMobileMenu) {
       setIsOpenMobileMenu(false);
