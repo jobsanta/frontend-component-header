@@ -1,7 +1,6 @@
 import React, {
   useContext,
   useState,
-  useRef,
   useEffect,
   useCallback,
 } from 'react';
@@ -42,7 +41,6 @@ const LearningHeader = ({
   const { authenticatedUser } = useContext(AppContext);
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
   const isDesktop = useMediaQuery({ query: '(min-width: 992px)' });
-  const ref = useRef();
 
   const headerLogo = (
     <LinkedLogo
@@ -67,19 +65,11 @@ const LearningHeader = ({
     window.location.reload();
   };
 
-  const handleClick = useCallback((event) => {
-    if (ref.current && !ref.current.contains(event.target) && isOpenMobileMenu) {
+  document.addEventListener('click', () => {
+    if (isOpenMobileMenu) {
       setIsOpenMobileMenu(false);
     }
-  }, [isOpenMobileMenu]);
-
-  useEffect(() => {
-    document.addEventListener('click', handleClick);
-
-    return () => {
-      document.removeEventListener('click', handleClick);
-    };
-  }, [handleClick]);
+  });
 
   return (
     <>
@@ -87,7 +77,7 @@ const LearningHeader = ({
         <div className="header-container container-xl">
           <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>
           <div className="py-2 d-flex header-logo">
-            {!isDesktop && <Hamburger ref={ref} toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
+            {!isDesktop && <Hamburger toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
             <div className="d-flex flex-row">
               {headerLogo}
               <div className="full-name-container">
