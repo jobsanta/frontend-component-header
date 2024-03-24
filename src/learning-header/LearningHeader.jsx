@@ -1,7 +1,4 @@
-import React, {
-  useContext,
-  useState,
-} from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getConfig } from '@edx/frontend-platform';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
@@ -57,14 +54,15 @@ const LearningHeader = ({
 
   const language = Cookies.get('openedx-language-preference', { domain }) ?? 'en';
 
-  const handleChangeLanguage = (event) => {
-    const newLanguage = event.target.value ?? 'en';
-    Cookies.set('openedx-language-preference', newLanguage, { domain });
-    window.location.reload();
-  };
-
-  document.addEventListener('click', () => {
-    if (isOpenMobileMenu) {
+  document.addEventListener('click', (event) => {
+    if (
+      !event.target.classList.contains('hamburger-react')
+      && !(
+        event.target.parentElement
+        && event.target.parentElement.classList.contains('hamburger-react')
+      )
+      && isOpenMobileMenu
+    ) {
       setIsOpenMobileMenu(false);
     }
   });
