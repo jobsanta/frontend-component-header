@@ -79,10 +79,12 @@ const HeaderBody = ({
               </div>
             )}
             {isMobile ? (
-              <div className="logo-container">
+              <>
                 <ActionRow.Spacer />
-                {renderBrandNav}
-              </div>
+                <div className="logo-container">
+                  {renderBrandNav}
+                </div>
+              </>
             ) : (
               <Nav data-testid="desktop-menu" className="ml-2">
                 {mainMenuDropdowns.map(dropdown => {
