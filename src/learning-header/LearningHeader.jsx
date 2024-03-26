@@ -162,7 +162,7 @@ const LearningHeader = ({
           )
         )}
       </header>
-      <div className="alocate-space" />
+      <div className="allocate-space" />
     </>
   );
 };

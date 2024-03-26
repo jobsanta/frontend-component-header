@@ -161,7 +161,7 @@ var LearningHeader = function LearningHeader(_ref2) {
   }, /*#__PURE__*/React.createElement("a", {
     href: "".concat(getLoginRedirectUrl(global.location.href))
   }, intl.formatMessage(genericMessages.signInSentenceCase)))))), /*#__PURE__*/React.createElement("div", {
-    className: "alocate-space"
+    className: "allocate-space"
   }));
 };
 LearningHeader.propTypes = {

@@ -47,7 +47,7 @@ const HeaderBody = ({
     <Container size="xl" className="px-2.5">
       <ActionRow as="header">
         {isHiddenMainMenu ? (
-          <Row className="flex-nowrap ml-4">
+          <Row className="logo-container flex-nowrap ml-4">
             {renderBrandNav}
           </Row>
         ) : (

@@ -46,7 +46,7 @@ const StudioHeader = ({
           <HeaderBody {...props} />
         </Responsive>
       </div>
-      <div className="alocate-space" />
+      <div className="allocate-space" />
     </>
   );
 };

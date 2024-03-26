@@ -35,7 +35,7 @@ var HeaderBody = function HeaderBody(_ref) {
   }, /*#__PURE__*/React.createElement(ActionRow, {
     as: "header"
   }, isHiddenMainMenu ? /*#__PURE__*/React.createElement(Row, {
-    className: "flex-nowrap ml-4"
+    className: "logo-container flex-nowrap ml-4"
   }, renderBrandNav) : /*#__PURE__*/React.createElement(React.Fragment, null, isMobile ? /*#__PURE__*/React.createElement(Button, {
     ref: setModalPopupTarget,
     className: "d-inline-flex align-items-center",
