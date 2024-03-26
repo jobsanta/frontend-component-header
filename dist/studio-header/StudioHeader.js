@@ -31,6 +31,7 @@ var StudioHeader = function StudioHeader(_ref) {
     mainMenuDropdowns: mainMenuDropdowns,
     outlineLink: outlineLink
   };
+  var fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "studio-header"
   }, /*#__PURE__*/React.createElement("a", {
@@ -41,6 +42,10 @@ var StudioHeader = function StudioHeader(_ref) {
   }, /*#__PURE__*/React.createElement(MobileHeader, props)), /*#__PURE__*/React.createElement(Responsive, {
     minWidth: 842
   }, /*#__PURE__*/React.createElement(HeaderBody, props))), /*#__PURE__*/React.createElement("div", {
+    className: "banner"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "banner-container"
+  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))), /*#__PURE__*/React.createElement("div", {
     className: "allocate-space"
   }));
 };

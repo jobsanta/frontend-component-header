@@ -35,6 +35,8 @@ const StudioHeader = ({
     outlineLink,
   };
 
+  const fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
+
   return (
     <>
       <div className="studio-header">
@@ -46,6 +48,14 @@ const StudioHeader = ({
           <HeaderBody {...props} />
         </Responsive>
       </div>
+
+      <div className="banner">
+        <div className="banner-container">
+          <h2>{fullNameTH}</h2>
+          <h1>E - Learning</h1>
+        </div>
+      </div>
+
       <div className="allocate-space" />
     </>
   );
