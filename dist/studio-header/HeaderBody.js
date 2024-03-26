@@ -46,7 +46,7 @@ var HeaderBody = function HeaderBody(_ref) {
   }, "Menu") : /*#__PURE__*/React.createElement("div", {
     className: "w-25"
   }, /*#__PURE__*/React.createElement(Row, {
-    className: "m-0 flex-nowrap"
+    className: "logo-container m-0 flex-nowrap"
   }, renderBrandNav, /*#__PURE__*/React.createElement(CourseLockUp, {
     outlineLink: outlineLink,
     number: number,

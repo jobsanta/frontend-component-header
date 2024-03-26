@@ -65,7 +65,7 @@ const HeaderBody = ({
               </Button>
             ) : (
               <div className="w-25">
-                <Row className="m-0 flex-nowrap">
+                <Row className="logo-container m-0 flex-nowrap">
                   {renderBrandNav}
                   <CourseLockUp
                     {...{
