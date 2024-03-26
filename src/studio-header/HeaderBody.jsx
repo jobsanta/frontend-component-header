@@ -81,6 +81,10 @@ const HeaderBody = ({
               <div className="w-25">
                 <Row className="logo-container m-0 flex-nowrap">
                   {renderBrandNav}
+                  <div className="full-name-container">
+                    <div className="full-name-th">{fullNameTH}</div>
+                    <div className="full-name-en">{fullNameEN}</div>
+                  </div>
                   <CourseLockUp
                     {...{
                       outlineLink,
@@ -97,11 +101,6 @@ const HeaderBody = ({
                 <ActionRow.Spacer />
                 <div className="logo-container">
                   {renderBrandNav}
-
-                  <div className="full-name-container">
-                    <div className="full-name-th">{fullNameTH}</div>
-                    <div className="full-name-en">{fullNameEN}</div>
-                  </div>
                 </div>
               </>
             ) : (

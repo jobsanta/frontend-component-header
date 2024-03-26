@@ -63,20 +63,20 @@ var HeaderBody = function HeaderBody(_ref) {
     className: "w-25"
   }, /*#__PURE__*/React.createElement(Row, {
     className: "logo-container m-0 flex-nowrap"
-  }, renderBrandNav, /*#__PURE__*/React.createElement(CourseLockUp, {
-    outlineLink: outlineLink,
-    number: number,
-    org: org,
-    title: title
-  }))), isMobile ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement("div", {
-    className: "logo-container"
   }, renderBrandNav, /*#__PURE__*/React.createElement("div", {
     className: "full-name-container"
   }, /*#__PURE__*/React.createElement("div", {
     className: "full-name-th"
   }, fullNameTH), /*#__PURE__*/React.createElement("div", {
     className: "full-name-en"
-  }, fullNameEN)))) : /*#__PURE__*/React.createElement(Nav, {
+  }, fullNameEN)), /*#__PURE__*/React.createElement(CourseLockUp, {
+    outlineLink: outlineLink,
+    number: number,
+    org: org,
+    title: title
+  }))), isMobile ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement("div", {
+    className: "logo-container"
+  }, renderBrandNav)) : /*#__PURE__*/React.createElement(Nav, {
     "data-testid": "desktop-menu",
     className: "ml-2"
   }, mainMenuDropdowns.map(function (dropdown) {
