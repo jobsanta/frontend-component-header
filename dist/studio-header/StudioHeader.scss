@@ -35,10 +35,10 @@ $white: #FFFFFF;
 
   .full-name-container {
     display: none;
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         display: flex;
         flex-direction: column; 
-        width: 220px;
+        min-width: 220px;
         align-items: flex-start;
         align-self: center;
         font-weight: 700;

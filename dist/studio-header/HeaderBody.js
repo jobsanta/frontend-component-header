@@ -59,9 +59,7 @@ var HeaderBody = function HeaderBody(_ref) {
     onClick: toggleModalPopup,
     iconBefore: isModalPopupOpen ? Close : MenuIcon,
     "data-testid": "mobile-menu-button"
-  }, "Menu") : /*#__PURE__*/React.createElement("div", {
-    className: "w-25"
-  }, /*#__PURE__*/React.createElement(Row, {
+  }, "Menu") : /*#__PURE__*/React.createElement(Row, {
     className: "logo-container m-0 flex-nowrap"
   }, renderBrandNav, /*#__PURE__*/React.createElement("div", {
     className: "full-name-container"
@@ -74,7 +72,7 @@ var HeaderBody = function HeaderBody(_ref) {
     number: number,
     org: org,
     title: title
-  }))), isMobile ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement("div", {
+  })), isMobile ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement("div", {
     className: "logo-container"
   }, renderBrandNav)) : /*#__PURE__*/React.createElement(Nav, {
     "data-testid": "desktop-menu",
