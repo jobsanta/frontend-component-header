@@ -2,12 +2,21 @@ $spacer: 1rem;
 $white: #FFFFFF;
 
 .studio-header {
-  position: relative;
+  position: fixed;
   z-index: 1000;
+  top: 0;
 
   height: 3.75rem;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / .1);
   background: $white;
+
+  height: 80px;
+  display: flex;
+  align-items: center;
+
+  div {
+    max-width: 1280px !important;
+  }
 
   .btn-outline-primary {
     border-color: $white;
@@ -25,6 +34,8 @@ $white: #FFFFFF;
     img {
       display: block;
       height: 100%;
+
+      padding: 0;
     }
   }
 

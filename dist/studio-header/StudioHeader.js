@@ -40,7 +40,9 @@ var StudioHeader = function StudioHeader(_ref) {
     maxWidth: 841
   }, /*#__PURE__*/React.createElement(MobileHeader, props)), /*#__PURE__*/React.createElement(Responsive, {
     minWidth: 842
-  }, /*#__PURE__*/React.createElement(HeaderBody, props)));
+  }, /*#__PURE__*/React.createElement(HeaderBody, props)), /*#__PURE__*/React.createElement("div", {
+    className: "alocate-space"
+  }));
 };
 StudioHeader.propTypes = {
   number: PropTypes.string,
