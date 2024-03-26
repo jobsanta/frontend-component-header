@@ -41,11 +41,11 @@ var StudioHeader = function StudioHeader(_ref) {
     maxWidth: 841
   }, /*#__PURE__*/React.createElement(MobileHeader, props)), /*#__PURE__*/React.createElement(Responsive, {
     minWidth: 842
-  }, /*#__PURE__*/React.createElement(HeaderBody, props))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(HeaderBody, props)), /*#__PURE__*/React.createElement("div", {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning"))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning")))), /*#__PURE__*/React.createElement("div", {
     className: "allocate-space"
   }));
 };

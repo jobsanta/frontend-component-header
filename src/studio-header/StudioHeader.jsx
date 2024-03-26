@@ -47,15 +47,13 @@ const StudioHeader = ({
         <Responsive minWidth={842}>
           <HeaderBody {...props} />
         </Responsive>
-      </div>
-
-      <div className="banner">
-        <div className="banner-container">
-          <h2>{fullNameTH}</h2>
-          <h1>E - Learning</h1>
+        <div className="banner">
+          <div className="banner-container">
+            <h2>{fullNameTH}</h2>
+            <h1>E - Learning</h1>
+          </div>
         </div>
       </div>
-
       <div className="allocate-space" />
     </>
   );

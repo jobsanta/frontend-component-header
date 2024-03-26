@@ -11,9 +11,18 @@ $white: #FFFFFF;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / .1);
   background: $white;
 
-  height: 80px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+
+  .banner {
+    height: 80px;
+    max-width: unset !important;
+
+    @include media-breakpoint-up(lg) {
+      height: 140px;
+    }
+  }
 
   .logo-container {
     display: flex;
@@ -24,6 +33,14 @@ $white: #FFFFFF;
       height: 60px;
       margin-right: 16px !important;
       margin-left: 0;
+    }
+
+    header {
+      height: 60px;
+
+      @media (min-width: 842px) {
+        height: 80px;
+      }
     }
 
     img {
