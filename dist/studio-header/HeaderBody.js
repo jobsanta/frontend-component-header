@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ActionRow, Button, Container, Nav, Row } from '@openedx/paragon';
 import { Close, MenuIcon } from '@openedx/paragon/icons';
+import Cookies from 'js-cookie';
 import CourseLockUp from './CourseLockUp';
 import UserMenu from './UserMenu';
 import BrandNav from './BrandNav';
 import NavDropdownMenu from './NavDropdownMenu';
 var HeaderBody = function HeaderBody(_ref) {
+  var _Cookies$get;
   var logo = _ref.logo,
     logoAltText = _ref.logoAltText,
     number = _ref.number,
@@ -29,6 +31,18 @@ var HeaderBody = function HeaderBody(_ref) {
     logo: logo,
     logoAltText: logoAltText
   });
+  var domain = window.location.hostname.replace('apps', '');
+  var language = (_Cookies$get = Cookies.get('openedx-language-preference', {
+    domain: domain
+  })) !== null && _Cookies$get !== void 0 ? _Cookies$get : 'en';
+  var handleChangeLanguage = function handleChangeLanguage(event) {
+    var _event$target$value;
+    var newLanguage = (_event$target$value = event.target.value) !== null && _event$target$value !== void 0 ? _event$target$value : 'en';
+    Cookies.set('openedx-language-preference', newLanguage, {
+      domain: domain
+    });
+    window.location.reload();
+  };
   return /*#__PURE__*/React.createElement(Container, {
     size: "xl",
     className: "px-2.5"
@@ -67,7 +81,16 @@ var HeaderBody = function HeaderBody(_ref) {
       buttonTitle: buttonTitle,
       items: items
     });
-  }))), /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement(Nav, null, /*#__PURE__*/React.createElement(UserMenu, {
+  }))), /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement(Nav, null, /*#__PURE__*/React.createElement("select", {
+    className: "language-selector",
+    value: language,
+    name: "language",
+    onChange: handleChangeLanguage
+  }, /*#__PURE__*/React.createElement("option", {
+    value: "en"
+  }, "EN"), /*#__PURE__*/React.createElement("option", {
+    value: "th"
+  }, "TH")), /*#__PURE__*/React.createElement(UserMenu, {
     username: username,
     studioBaseUrl: studioBaseUrl,
     logoutUrl: logoutUrl,

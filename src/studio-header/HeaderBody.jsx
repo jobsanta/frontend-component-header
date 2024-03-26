@@ -8,6 +8,7 @@ import {
   Row,
 } from '@openedx/paragon';
 import { Close, MenuIcon } from '@openedx/paragon/icons';
+import Cookies from 'js-cookie';
 
 import CourseLockUp from './CourseLockUp';
 import UserMenu from './UserMenu';
@@ -42,6 +43,16 @@ const HeaderBody = ({
       }}
     />
   );
+
+  const domain = window.location.hostname.replace('apps', '');
+
+  const language = Cookies.get('openedx-language-preference', { domain }) ?? 'en';
+
+  const handleChangeLanguage = (event) => {
+    const newLanguage = event.target.value ?? 'en';
+    Cookies.set('openedx-language-preference', newLanguage, { domain });
+    window.location.reload();
+  };
 
   return (
     <Container size="xl" className="px-2.5">
@@ -99,6 +110,10 @@ const HeaderBody = ({
         )}
         <ActionRow.Spacer />
         <Nav>
+          <select className="language-selector" value={language} name="language" onChange={handleChangeLanguage}>
+            <option value="en">EN</option>
+            <option value="th">TH</option>
+          </select>
           <UserMenu
             {...{
               username,
