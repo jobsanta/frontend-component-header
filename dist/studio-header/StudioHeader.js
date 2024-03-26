@@ -31,7 +31,7 @@ var StudioHeader = function StudioHeader(_ref) {
     mainMenuDropdowns: mainMenuDropdowns,
     outlineLink: outlineLink
   };
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "studio-header"
   }, /*#__PURE__*/React.createElement("a", {
     className: "nav-skip sr-only sr-only-focusable",
@@ -40,7 +40,7 @@ var StudioHeader = function StudioHeader(_ref) {
     maxWidth: 841
   }, /*#__PURE__*/React.createElement(MobileHeader, props)), /*#__PURE__*/React.createElement(Responsive, {
     minWidth: 842
-  }, /*#__PURE__*/React.createElement(HeaderBody, props)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(HeaderBody, props))), /*#__PURE__*/React.createElement("div", {
     className: "alocate-space"
   }));
 };
