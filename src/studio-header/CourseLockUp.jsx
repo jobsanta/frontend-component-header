@@ -24,7 +24,7 @@ const CourseLockUp = ({
     )}
   >
     <a
-      className="course-title-lockup mr-2"
+      className="course-title-lockup"
       href={outlineLink}
       aria-label={intl.formatMessage(messages['header.label.courseOutline'])}
       data-testid="course-lock-up-block"

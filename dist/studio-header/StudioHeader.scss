@@ -5,7 +5,7 @@ $white: #FFFFFF;
   .allocate-space {
     height: 140px;
   
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 842px) {
       height: 220px;
     }
   }
@@ -61,6 +61,16 @@ $white: #FFFFFF;
       height: 140px;
       min-height: 140px;
     }
+
+    .banner-container{
+      @media (min-width: 842px) {
+        margin: 24px 0 0 224px;
+  
+        h1, h2 {
+          font-size: revert;
+        }
+      }
+    }
   }
 
   .logo-container {
@@ -70,7 +80,6 @@ $white: #FFFFFF;
 
     @media (min-width: 842px) {
       height: 60px;
-      margin-right: 16px !important;
       margin-left: 0;
     }
 
