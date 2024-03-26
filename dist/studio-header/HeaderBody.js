@@ -52,7 +52,9 @@ var HeaderBody = function HeaderBody(_ref) {
     number: number,
     org: org,
     title: title
-  }))), isMobile ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ActionRow.Spacer, null), renderBrandNav) : /*#__PURE__*/React.createElement(Nav, {
+  }))), isMobile ? /*#__PURE__*/React.createElement("div", {
+    className: "logo-container"
+  }, /*#__PURE__*/React.createElement(ActionRow.Spacer, null), renderBrandNav) : /*#__PURE__*/React.createElement(Nav, {
     "data-testid": "desktop-menu",
     className: "ml-2"
   }, mainMenuDropdowns.map(function (dropdown) {
