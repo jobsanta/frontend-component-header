@@ -54,6 +54,9 @@ const HeaderBody = ({
     window.location.reload();
   };
 
+  const fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
+  const fullNameEN = 'Film Archive (Public Organization)';
+
   return (
     <Container size="xl" className="px-2.5">
       <ActionRow as="header">
@@ -94,6 +97,11 @@ const HeaderBody = ({
                 <ActionRow.Spacer />
                 <div className="logo-container">
                   {renderBrandNav}
+
+                  <div className="full-name-container">
+                    <div className="full-name-th">{fullNameTH}</div>
+                    <div className="full-name-en">{fullNameEN}</div>
+                  </div>
                 </div>
               </>
             ) : (

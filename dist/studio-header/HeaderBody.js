@@ -43,6 +43,8 @@ var HeaderBody = function HeaderBody(_ref) {
     });
     window.location.reload();
   };
+  var fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
+  var fullNameEN = 'Film Archive (Public Organization)';
   return /*#__PURE__*/React.createElement(Container, {
     size: "xl",
     className: "px-2.5"
@@ -68,7 +70,13 @@ var HeaderBody = function HeaderBody(_ref) {
     title: title
   }))), isMobile ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement("div", {
     className: "logo-container"
-  }, renderBrandNav)) : /*#__PURE__*/React.createElement(Nav, {
+  }, renderBrandNav, /*#__PURE__*/React.createElement("div", {
+    className: "full-name-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "full-name-th"
+  }, fullNameTH), /*#__PURE__*/React.createElement("div", {
+    className: "full-name-en"
+  }, fullNameEN)))) : /*#__PURE__*/React.createElement(Nav, {
     "data-testid": "desktop-menu",
     className: "ml-2"
   }, mainMenuDropdowns.map(function (dropdown) {

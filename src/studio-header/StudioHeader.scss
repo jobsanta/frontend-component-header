@@ -33,6 +33,25 @@ $white: #FFFFFF;
     }
   }
 
+  .full-name-container {
+    display: none;
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-direction: column; 
+        width: 220px;
+        align-items: flex-start;
+        align-self: center;
+        font-weight: 700;
+        line-height: 1.5rem;
+        .full-name-th {
+            font-size: 1rem;
+        }
+        .full-name-en {
+            font-size: 0.75rem;
+        }
+    }
+  }
+
   .banner {
     height: 80px;
     min-height: 80px;
