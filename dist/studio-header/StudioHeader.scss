@@ -16,14 +16,17 @@ $white: #FFFFFF;
   align-items: center;
 
   .logo-container {
+    display: flex;
+    align-items: center;
+
     img {
       height: 40px;
       padding: 0;
-      margin: 0;
+      margin: 0 !important;
 
       @include media-breakpoint-up(lg) {
         height: 60px;
-        margin-right: 16px;
+        margin-right: 16px !important;
       }
     }
   }
