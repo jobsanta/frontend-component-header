@@ -95,6 +95,7 @@ footer {
   position: fixed;
   width: 100%;
   background-color: $white;
+  z-index: 1000;
 
   .header-container {
     display: flex;
