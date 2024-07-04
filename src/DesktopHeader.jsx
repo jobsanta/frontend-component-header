@@ -145,6 +145,7 @@ class DesktopHeader extends React.Component {
                 {this.renderAppMenu()}
               </nav>
             ) : null}
+            <h1> Big Banner</h1>
             <nav
               aria-label={intl.formatMessage(messages['header.label.secondary.nav'])}
               className="nav secondary-menu-container align-items-center ml-auto"
