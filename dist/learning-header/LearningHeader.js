@@ -17,6 +17,7 @@ import { AppContext } from '@edx/frontend-platform/react';
 import { Squash as Hamburger } from 'hamburger-react';
 import { useMediaQuery } from 'react-responsive';
 import Cookies from 'js-cookie';
+import fapotImage from '../images/fapot_Header_1_0.png';
 import AnonymousUserMenu from './AnonymousUserMenu';
 import AuthenticatedUserDropdown from './AuthenticatedUserDropdown';
 import messages from './messages';
@@ -97,12 +98,6 @@ var LearningHeader = function LearningHeader(_ref2) {
   }), /*#__PURE__*/React.createElement("div", {
     className: "d-flex flex-row"
   }, headerLogo, /*#__PURE__*/React.createElement("div", {
-    className: "full-name-container"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "full-name-th"
-  }, fullNameTH), /*#__PURE__*/React.createElement("div", {
-    className: "full-name-en"
-  }, fullNameEN)), /*#__PURE__*/React.createElement("div", {
     className: "flex-grow-1 course-title-lockup",
     style: {
       lineHeight: 1
@@ -128,7 +123,10 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning v2"))), !isHideMenuItem && (authenticatedUser ? /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("img", {
+    src: fapotImage,
+    alt: fullNameTH
+  }))), !isHideMenuItem && (authenticatedUser ? /*#__PURE__*/React.createElement("div", {
     className: "mobile-menu"
   }, /*#__PURE__*/React.createElement("div", {
     className: "mobile-nav-link"

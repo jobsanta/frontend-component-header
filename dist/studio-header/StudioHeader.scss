@@ -56,6 +56,7 @@ $white: #FFFFFF;
     height: 80px;
     min-height: 80px;
     max-width: unset !important;
+    background-color: #f2375e;
 
     @media (min-width: 842px) {
       height: 140px;
@@ -64,10 +65,15 @@ $white: #FFFFFF;
 
     .banner-container{
       @media (min-width: 842px) {
-        margin: 24px 0 0 224px;
-  
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1060px;
         h1, h2 {
           font-size: revert;
+        }
+        img{
+          height:100%;
+          margin: 0 0 0 57px;
         }
       }
     }

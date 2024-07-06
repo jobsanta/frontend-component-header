@@ -7,7 +7,7 @@ import { AppContext } from '@edx/frontend-platform/react';
 import { Squash as Hamburger } from 'hamburger-react';
 import { useMediaQuery } from 'react-responsive';
 import Cookies from 'js-cookie';
-
+import fapotImage from '../images/fapot_Header_1_0.png';
 import AnonymousUserMenu from './AnonymousUserMenu';
 import AuthenticatedUserDropdown from './AuthenticatedUserDropdown';
 import messages from './messages';
@@ -84,10 +84,6 @@ const LearningHeader = ({
             {!isDesktop && <Hamburger toggled={isOpenMobileMenu} toggle={setIsOpenMobileMenu} /> }
             <div className="d-flex flex-row">
               {headerLogo}
-              <div className="full-name-container">
-                <div className="full-name-th">{fullNameTH}</div>
-                <div className="full-name-en">{fullNameEN}</div>
-              </div>
               <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
                 <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
                 <span className="d-block small m-0">{courseOrg} {courseNumber}</span>
@@ -112,8 +108,7 @@ const LearningHeader = ({
 
         <div className="banner">
           <div className="banner-container">
-            <h2>{fullNameTH}</h2>
-            <h1>E - Learning v2</h1>
+            <img src = {fapotImage} alt={fullNameTH}/>
           </div>
         </div>
 

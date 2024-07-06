@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Responsive from 'react-responsive';
 import { AppContext } from '@edx/frontend-platform/react';
 import { ensureConfig } from '@edx/frontend-platform';
-
+import fapotImage from '../images/fapot_Header_1_0.png';
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
 
@@ -49,8 +49,7 @@ const StudioHeader = ({
         </Responsive>
         <div className="banner">
           <div className="banner-container">
-            <h2>{fullNameTH}</h2>
-            <h1>E - Learning v2</h1>
+            <img src = {fapotImage} alt={fullNameTH}/>
           </div>
         </div>
       </div>

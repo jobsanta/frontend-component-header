@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Responsive from 'react-responsive';
 import { AppContext } from '@edx/frontend-platform/react';
 import { ensureConfig } from '@edx/frontend-platform';
+import fapotImage from '../images/fapot_Header_1_0.png';
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
 ensureConfig(['STUDIO_BASE_URL', 'SITE_NAME', 'LOGOUT_URL', 'LOGIN_URL', 'LOGO_URL'], 'Studio Header component');
@@ -45,7 +46,10 @@ var StudioHeader = function StudioHeader(_ref) {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning v2")))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("img", {
+    src: fapotImage,
+    alt: fullNameTH
+  })))), /*#__PURE__*/React.createElement("div", {
     className: "allocate-space"
   }));
 };
