@@ -45,7 +45,7 @@ var StudioHeader = function StudioHeader(_ref) {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning")))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h2", null, fullNameTH), /*#__PURE__*/React.createElement("h1", null, "E - Learning v2")))), /*#__PURE__*/React.createElement("div", {
     className: "allocate-space"
   }));
 };

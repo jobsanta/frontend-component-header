@@ -50,7 +50,7 @@ const StudioHeader = ({
         <div className="banner">
           <div className="banner-container">
             <h2>{fullNameTH}</h2>
-            <h1>E - Learning</h1>
+            <h1>E - Learning v2</h1>
           </div>
         </div>
       </div>
