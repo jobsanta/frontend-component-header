@@ -1,15 +1,15 @@
 $spacer: 1rem;
 $blue: #007db8;
-$white: #FFFFFF;
+$white: #ffffff;
 
-$primary: #15376D;
-$primary-light: #F2F7F8;
+$primary: #15376d;
+$primary-light: #f2f7f8;
 
 $drak: #111827;
 $light-drak: #374151;
 
-@import './Menu/menu.scss';
-@import './studio-header/StudioHeader.scss';
+@import "./Menu/menu.scss";
+@import "./studio-header/StudioHeader.scss";
 
 // disable footer
 footer {
@@ -20,17 +20,13 @@ footer {
   text-decoration: none;
 }
 
-.learning-header
-{
-  .container-xl{
-
-    @media (min-width: 1200px)
-    {
+.learning-header {
+  .container-xl {
+    @media (min-width: 1200px) {
       max-width: 1060px !important;
     }
   }
 }
-
 
 .icon-button {
   display: inline-flex;
@@ -41,11 +37,12 @@ footer {
   border: none;
   height: 3rem;
   width: 3rem;
-  padding: .75rem;
+  padding: 0.75rem;
   justify-content: center;
-  align-items:center;
-  &:hover, &:focus {
-    background: rgba(0,0,0,.1);
+  align-items: center;
+  &:hover,
+  &:focus {
+    background: rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -68,18 +65,19 @@ footer {
     height: 140px;
   }
 
-  .banner-container{
+  .banner-container {
     width: 100%;
     max-width: 1060px;
     margin: 0 auto;
-    h1, h2 {
+    h1,
+    h2 {
       color: white;
       font-weight: 700;
       text-align: start;
       margin: 0;
     }
-    img{
-      height:100%;
+    img {
+      height: 100%;
       margin: 0 0 0 57px;
     }
 
@@ -92,13 +90,11 @@ footer {
     }
 
     @include media-breakpoint-up(lg) {
-
-
-      h1, h2 {
+      h1,
+      h2 {
         font-size: revert;
       }
     }
-
   }
 }
 
@@ -119,47 +115,47 @@ footer {
     @include media-breakpoint-up(lg) {
       height: 80px;
     }
-  
+
     .header-logo {
-      align-items: center; 
-      justify-content: space-between; 
+      align-items: center;
+      justify-content: space-between;
       position: relative;
       width: 100%;
-  
+
       .link-logo {
         margin: 0 !important;
-  
+
         @include media-breakpoint-up(lg) {
           margin: 0 8px 0 0 !important;
         }
-  
+
         img {
           height: 40px;
           @include media-breakpoint-up(lg) {
-              height: 60px;
+            height: 60px;
           }
         }
       }
-  
+
       .full-name-container {
         display: none;
         @include media-breakpoint-up(lg) {
-            display: flex;
-            flex-direction: column; 
-            width: 220px;
-            align-items: flex-start;
-            align-self: center;
-            font-weight: 700;
-            line-height: 1.5rem;
-            .full-name-th {
-                font-size: 1rem;
-            }
-            .full-name-en {
-                font-size: 0.75rem;
-            }
+          display: none;
+          flex-direction: column;
+          width: 220px;
+          align-items: flex-start;
+          align-self: center;
+          font-weight: 700;
+          line-height: 1.5rem;
+          .full-name-th {
+            font-size: 1rem;
+          }
+          .full-name-en {
+            font-size: 0.75rem;
+          }
         }
       }
-  
+
       .course-title-lockup {
         min-width: 0;
         flex-direction: column;
@@ -168,11 +164,11 @@ footer {
         flex-grow: unset !important;
         align-self: center;
         gap: 8px;
-    
+
         @include media-breakpoint-up(lg) {
           display: flex !important;
         }
-    
+
         span {
           white-space: nowrap;
           overflow: hidden;
@@ -185,7 +181,7 @@ footer {
         display: flex;
         align-items: center;
 
-        .dropdown-menu  {
+        .dropdown-menu {
           display: none;
 
           @include media-breakpoint-up(lg) {
@@ -204,14 +200,14 @@ footer {
             height: 3rem;
           }
         }
-      
+
         .login-button {
           display: none;
-      
+
           @include media-breakpoint-up(lg) {
             display: unset;
           }
-      
+
           height: 40px;
           padding: 9px 17px;
           font-size: 0.875rem;
@@ -273,21 +269,22 @@ footer {
     width: 100%;
     background-color: $white;
     .mobile-nav-link {
-        a {
-            display: flex;
-            height: 52px;
-            font-weight: normal;
-            padding: 16px;
-            font-size: 14px;
-            line-height: 20px;
-            color: $light-drak;
-            border: none;
-            background-color: $white;
-            &:hover, &.active {
-                background: $primary-light;
-                color: $drak;
-            }
+      a {
+        display: flex;
+        height: 52px;
+        font-weight: normal;
+        padding: 16px;
+        font-size: 14px;
+        line-height: 20px;
+        color: $light-drak;
+        border: none;
+        background-color: $white;
+        &:hover,
+        &.active {
+          background: $primary-light;
+          color: $drak;
         }
+      }
     }
   }
 }
@@ -310,9 +307,8 @@ footer {
   }
 }
 
-
 .site-header-desktop {
-  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
   background: $white;
   .nav-link {
     text-decoration: none;
@@ -321,19 +317,19 @@ footer {
     display: block;
     box-sizing: content-box;
     position: relative;
-    top: -.05em;
+    top: -0.05em;
     height: 1.75rem;
     padding: 1rem 0;
     margin: 0 !important;
 
     @include media-breakpoint-up(lg) {
       margin-right: 8px !important;
-  }
+    }
 
     img {
       height: 40px;
       @include media-breakpoint-up(lg) {
-          height: 60px;
+        height: 60px;
       }
     }
   }
@@ -342,7 +338,7 @@ footer {
       padding: 1.125rem 1rem;
       text-decoration: none;
       font-weight: 500;
-      letter-spacing: .01em;
+      letter-spacing: 0.01em;
     }
     .nav-link:hover,
     .nav-link:focus,
@@ -357,7 +353,7 @@ footer {
         border-top: solid 2px $component-active-bg;
         left: 0;
         right: 0;
-        box-shadow: 0 1px 2px rgba(0,0,0,.25);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
         padding: 1rem;
