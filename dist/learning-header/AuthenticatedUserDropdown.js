@@ -6,11 +6,13 @@ import { getConfig } from '@edx/frontend-platform';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { Dropdown } from '@openedx/paragon';
 import messages from './messages';
-var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
-  var intl = _ref.intl,
-    username = _ref.username;
-  var dashboardMenuItem = /*#__PURE__*/React.createElement(Dropdown.Item, {
-    href: "".concat(getConfig().LMS_BASE_URL, "/dashboard")
+const AuthenticatedUserDropdown = _ref => {
+  let {
+    intl,
+    username
+  } = _ref;
+  const dashboardMenuItem = /*#__PURE__*/React.createElement(Dropdown.Item, {
+    href: `${getConfig().LMS_BASE_URL}/dashboard`
   }, intl.formatMessage(messages.dashboard));
   return /*#__PURE__*/React.createElement(Dropdown, {
     className: "user-dropdown ml-3"
@@ -26,9 +28,9 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
   }, username)), /*#__PURE__*/React.createElement(Dropdown.Menu, {
     className: "dropdown-menu-right"
   }, dashboardMenuItem, /*#__PURE__*/React.createElement(Dropdown.Item, {
-    href: "".concat(getConfig().LMS_BASE_URL, "/courses")
+    href: `${getConfig().LMS_BASE_URL}/courses`
   }, intl.formatMessage(messages.courses)), /*#__PURE__*/React.createElement(Dropdown.Item, {
-    href: "".concat(getConfig().ACCOUNT_PROFILE_URL, "/u/").concat(username)
+    href: `${getConfig().ACCOUNT_PROFILE_URL}/u/${username}`
   }, intl.formatMessage(messages.profile)), /*#__PURE__*/React.createElement(Dropdown.Item, {
     href: getConfig().ACCOUNT_SETTINGS_URL
   }, intl.formatMessage(messages.account)), /*#__PURE__*/React.createElement(Dropdown.Item, {

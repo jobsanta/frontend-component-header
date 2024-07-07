@@ -1,5 +1,5 @@
 import { defineMessages } from '@edx/frontend-platform/i18n';
-var messages = defineMessages({
+const messages = defineMessages({
   courses: {
     id: 'header.menu.courses.label',
     defaultMessage: 'Discover New',

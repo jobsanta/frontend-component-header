@@ -12,7 +12,7 @@ import hiMessages from './messages/hi.json';
 import frCAMessages from './messages/fr_CA.json';
 // no need to import en messages-- they are in the defaultMessage field
 
-var messages = {
+const messages = {
   ar: arMessages,
   'es-419': es419Messages,
   fr: frMessages,

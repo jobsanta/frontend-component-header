@@ -4,16 +4,18 @@ import { getLoginRedirectUrl } from '@edx/frontend-platform/auth';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { Button } from '@openedx/paragon';
 import genericMessages from '../generic/messages';
-var AnonymousUserMenu = function AnonymousUserMenu(_ref) {
-  var intl = _ref.intl;
+const AnonymousUserMenu = _ref => {
+  let {
+    intl
+  } = _ref;
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Button, {
     className: "login-button mr-3",
     variant: "outline-primary",
-    href: "".concat(getConfig().LMS_BASE_URL, "/register?next=").concat(encodeURIComponent(global.location.href))
+    href: `${getConfig().LMS_BASE_URL}/register?next=${encodeURIComponent(global.location.href)}`
   }, intl.formatMessage(genericMessages.registerSentenceCase)), /*#__PURE__*/React.createElement(Button, {
     className: "login-button",
     variant: "primary",
-    href: "".concat(getLoginRedirectUrl(global.location.href))
+    href: `${getLoginRedirectUrl(global.location.href)}`
   }, intl.formatMessage(genericMessages.signInSentenceCase)));
 };
 AnonymousUserMenu.propTypes = {

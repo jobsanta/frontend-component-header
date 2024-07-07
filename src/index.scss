@@ -20,6 +20,18 @@ footer {
   text-decoration: none;
 }
 
+.learning-header
+{
+  .container-xl{
+
+    @media (min-width: 1200px)
+    {
+      max-width: 1060px !important;
+    }
+  }
+}
+
+
 .icon-button {
   display: inline-flex;
   line-height: 3rem;
@@ -86,6 +98,7 @@ footer {
         font-size: revert;
       }
     }
+
   }
 }
 

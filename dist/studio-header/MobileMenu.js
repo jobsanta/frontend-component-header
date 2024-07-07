@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Collapsible } from '@openedx/paragon';
-var MobileMenu = function MobileMenu(_ref) {
-  var mainMenuDropdowns = _ref.mainMenuDropdowns;
+const MobileMenu = _ref => {
+  let {
+    mainMenuDropdowns
+  } = _ref;
   return /*#__PURE__*/React.createElement("div", {
     className: "ml-4 p-2 bg-light-100 border border-gray-200 small rounded",
     "data-testid": "mobile-menu"
-  }, /*#__PURE__*/React.createElement("div", null, mainMenuDropdowns.map(function (dropdown) {
-    var id = dropdown.id,
-      buttonTitle = dropdown.buttonTitle,
-      items = dropdown.items;
+  }, /*#__PURE__*/React.createElement("div", null, mainMenuDropdowns.map(dropdown => {
+    const {
+      id,
+      buttonTitle,
+      items
+    } = dropdown;
     return /*#__PURE__*/React.createElement(Collapsible, {
       className: "border-light-100",
       title: buttonTitle,
@@ -19,13 +23,11 @@ var MobileMenu = function MobileMenu(_ref) {
       style: {
         listStyleType: 'none'
       }
-    }, items.map(function (item) {
-      return /*#__PURE__*/React.createElement("li", {
-        className: "mobile-menu-item"
-      }, /*#__PURE__*/React.createElement("a", {
-        href: item.href
-      }, item.title));
-    })));
+    }, items.map(item => /*#__PURE__*/React.createElement("li", {
+      className: "mobile-menu-item"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: item.href
+    }, item.title)))));
   })));
 };
 MobileMenu.propTypes = {

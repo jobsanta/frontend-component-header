@@ -1,25 +1,27 @@
 import messages from './messages';
-var getUserMenuItems = function getUserMenuItems(_ref) {
-  var studioBaseUrl = _ref.studioBaseUrl,
-    logoutUrl = _ref.logoutUrl,
-    intl = _ref.intl,
-    isAdmin = _ref.isAdmin;
-  var items = [{
-    href: "".concat(studioBaseUrl),
+const getUserMenuItems = _ref => {
+  let {
+    studioBaseUrl,
+    logoutUrl,
+    intl,
+    isAdmin
+  } = _ref;
+  let items = [{
+    href: `${studioBaseUrl}`,
     title: intl.formatMessage(messages['header.user.menu.studio'])
   }, {
-    href: "".concat(logoutUrl),
+    href: `${logoutUrl}`,
     title: intl.formatMessage(messages['header.user.menu.logout'])
   }];
   if (isAdmin) {
     items = [{
-      href: "".concat(studioBaseUrl),
+      href: `${studioBaseUrl}`,
       title: intl.formatMessage(messages['header.user.menu.studio'])
     }, {
-      href: "".concat(studioBaseUrl, "/maintenance"),
+      href: `${studioBaseUrl}/maintenance`,
       title: intl.formatMessage(messages['header.user.menu.maintenance'])
     }, {
-      href: "".concat(logoutUrl),
+      href: `${logoutUrl}`,
       title: intl.formatMessage(messages['header.user.menu.logout'])
     }];
   }
