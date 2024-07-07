@@ -1,19 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  ActionRow,
-  Button,
-  Container,
-  Nav,
-  Row,
-} from '@openedx/paragon';
-import { Close, MenuIcon } from '@openedx/paragon/icons';
-import Cookies from 'js-cookie';
+import React from "react";
+import PropTypes from "prop-types";
+import { ActionRow, Button, Container, Nav, Row } from "@openedx/paragon";
+import { Close, MenuIcon } from "@openedx/paragon/icons";
+import Cookies from "js-cookie";
 
-import CourseLockUp from './CourseLockUp';
-import UserMenu from './UserMenu';
-import BrandNav from './BrandNav';
-import NavDropdownMenu from './NavDropdownMenu';
+import CourseLockUp from "./CourseLockUp";
+import UserMenu from "./UserMenu";
+import BrandNav from "./BrandNav";
+import NavDropdownMenu from "./NavDropdownMenu";
 
 const HeaderBody = ({
   logo,
@@ -44,18 +38,19 @@ const HeaderBody = ({
     />
   );
 
-  const domain = window.location.hostname.replace('apps', '');
+  const domain = window.location.hostname.replace("apps", "");
 
-  const language = Cookies.get('openedx-language-preference', { domain }) ?? 'en';
+  const language =
+    Cookies.get("openedx-language-preference", { domain }) ?? "en";
 
   const handleChangeLanguage = (event) => {
-    const newLanguage = event.target.value ?? 'en';
-    Cookies.set('openedx-language-preference', newLanguage, { domain });
+    const newLanguage = event.target.value ?? "en";
+    Cookies.set("openedx-language-preference", newLanguage, { domain });
     window.location.reload();
   };
 
-  const fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
-  const fullNameEN = 'Film Archive (Public Organization)';
+  const fullNameTH = "หอภาพยนตร์ (องค์การมหาชน)";
+  const fullNameEN = "Film Archive (Public Organization)";
 
   return (
     <Container size="xl" className="px-2.5">
@@ -80,10 +75,6 @@ const HeaderBody = ({
             ) : (
               <Row className="logo-container m-0 flex-nowrap">
                 {renderBrandNav}
-                <div className="full-name-container">
-                  <div className="full-name-th">{fullNameTH}</div>
-                  <div className="full-name-en">{fullNameEN}</div>
-                </div>
                 <CourseLockUp
                   {...{
                     outlineLink,
@@ -97,13 +88,11 @@ const HeaderBody = ({
             {isMobile ? (
               <>
                 <ActionRow.Spacer />
-                <div className="logo-container">
-                  {renderBrandNav}
-                </div>
+                <div className="logo-container">{renderBrandNav}</div>
               </>
             ) : (
               <Nav data-testid="desktop-menu" className="ml-2">
-                {mainMenuDropdowns.map(dropdown => {
+                {mainMenuDropdowns.map((dropdown) => {
                   const { id, buttonTitle, items } = dropdown;
                   return (
                     <NavDropdownMenu key={id} {...{ id, buttonTitle, items }} />
@@ -115,7 +104,12 @@ const HeaderBody = ({
         )}
         <ActionRow.Spacer />
         <Nav>
-          <select className="language-selector" value={language} name="language" onChange={handleChangeLanguage}>
+          <select
+            className="language-selector"
+            value={language}
+            name="language"
+            onChange={handleChangeLanguage}
+          >
             <option value="en">EN</option>
             <option value="th">TH</option>
           </select>
@@ -150,14 +144,18 @@ HeaderBody.propTypes = {
   isAdmin: PropTypes.bool,
   isMobile: PropTypes.bool,
   isHiddenMainMenu: PropTypes.bool,
-  mainMenuDropdowns: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    buttonTitle: PropTypes.string,
-    items: PropTypes.arrayOf(PropTypes.shape({
-      href: PropTypes.string,
-      title: PropTypes.string,
-    })),
-  })),
+  mainMenuDropdowns: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      buttonTitle: PropTypes.string,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          href: PropTypes.string,
+          title: PropTypes.string,
+        })
+      ),
+    })
+  ),
   outlineLink: PropTypes.string,
 };
 
@@ -167,9 +165,9 @@ HeaderBody.defaultProps = {
   isModalPopupOpen: false,
   logo: null,
   logoAltText: null,
-  number: '',
-  org: '',
-  title: '',
+  number: "",
+  org: "",
+  title: "",
   authenticatedUserAvatar: null,
   username: null,
   isAdmin: false,
