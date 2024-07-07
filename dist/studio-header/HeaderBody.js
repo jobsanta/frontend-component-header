@@ -1,50 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { ActionRow, Button, Container, Nav, Row } from '@openedx/paragon';
-import { Close, MenuIcon } from '@openedx/paragon/icons';
-import Cookies from 'js-cookie';
-import CourseLockUp from './CourseLockUp';
-import UserMenu from './UserMenu';
-import BrandNav from './BrandNav';
-import NavDropdownMenu from './NavDropdownMenu';
-const HeaderBody = _ref => {
-  let {
-    logo,
-    logoAltText,
-    number,
-    org,
-    title,
-    username,
-    isAdmin,
-    studioBaseUrl,
-    logoutUrl,
-    authenticatedUserAvatar,
-    isMobile,
-    setModalPopupTarget,
-    toggleModalPopup,
-    isModalPopupOpen,
-    isHiddenMainMenu,
-    mainMenuDropdowns,
-    outlineLink
-  } = _ref;
-  const renderBrandNav = /*#__PURE__*/React.createElement(BrandNav, {
-    studioBaseUrl,
-    logo,
-    logoAltText
+import React from "react";
+import PropTypes from "prop-types";
+import { ActionRow, Button, Container, Nav, Row } from "@openedx/paragon";
+import { Close, MenuIcon } from "@openedx/paragon/icons";
+import Cookies from "js-cookie";
+import CourseLockUp from "./CourseLockUp";
+import UserMenu from "./UserMenu";
+import BrandNav from "./BrandNav";
+import NavDropdownMenu from "./NavDropdownMenu";
+var HeaderBody = function HeaderBody(_ref) {
+  var _Cookies$get;
+  var logo = _ref.logo,
+    logoAltText = _ref.logoAltText,
+    number = _ref.number,
+    org = _ref.org,
+    title = _ref.title,
+    username = _ref.username,
+    isAdmin = _ref.isAdmin,
+    studioBaseUrl = _ref.studioBaseUrl,
+    logoutUrl = _ref.logoutUrl,
+    authenticatedUserAvatar = _ref.authenticatedUserAvatar,
+    isMobile = _ref.isMobile,
+    setModalPopupTarget = _ref.setModalPopupTarget,
+    toggleModalPopup = _ref.toggleModalPopup,
+    isModalPopupOpen = _ref.isModalPopupOpen,
+    isHiddenMainMenu = _ref.isHiddenMainMenu,
+    mainMenuDropdowns = _ref.mainMenuDropdowns,
+    outlineLink = _ref.outlineLink;
+  var renderBrandNav = /*#__PURE__*/React.createElement(BrandNav, {
+    studioBaseUrl: studioBaseUrl,
+    logo: logo,
+    logoAltText: logoAltText
   });
-  const domain = window.location.hostname.replace('apps', '');
-  const language = Cookies.get('openedx-language-preference', {
-    domain
-  }) ?? 'en';
-  const handleChangeLanguage = event => {
-    const newLanguage = event.target.value ?? 'en';
-    Cookies.set('openedx-language-preference', newLanguage, {
-      domain
+  var domain = window.location.hostname.replace("apps", "");
+  var language = (_Cookies$get = Cookies.get("openedx-language-preference", {
+    domain: domain
+  })) !== null && _Cookies$get !== void 0 ? _Cookies$get : "en";
+  var handleChangeLanguage = function handleChangeLanguage(event) {
+    var _event$target$value;
+    var newLanguage = (_event$target$value = event.target.value) !== null && _event$target$value !== void 0 ? _event$target$value : "en";
+    Cookies.set("openedx-language-preference", newLanguage, {
+      domain: domain
     });
     window.location.reload();
   };
-  const fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
-  const fullNameEN = 'Film Archive (Public Organization)';
+  var fullNameTH = "หอภาพยนตร์ (องค์การมหาชน)";
+  var fullNameEN = "Film Archive (Public Organization)";
   return /*#__PURE__*/React.createElement(Container, {
     size: "xl",
     className: "px-2.5"
@@ -61,33 +61,25 @@ const HeaderBody = _ref => {
     "data-testid": "mobile-menu-button"
   }, "Menu") : /*#__PURE__*/React.createElement(Row, {
     className: "logo-container m-0 flex-nowrap"
-  }, renderBrandNav, /*#__PURE__*/React.createElement("div", {
-    className: "full-name-container"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "full-name-th"
-  }, fullNameTH), /*#__PURE__*/React.createElement("div", {
-    className: "full-name-en"
-  }, fullNameEN)), /*#__PURE__*/React.createElement(CourseLockUp, {
-    outlineLink,
-    number,
-    org,
-    title
+  }, renderBrandNav, /*#__PURE__*/React.createElement(CourseLockUp, {
+    outlineLink: outlineLink,
+    number: number,
+    org: org,
+    title: title
   })), isMobile ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement("div", {
     className: "logo-container"
   }, renderBrandNav)) : /*#__PURE__*/React.createElement(Nav, {
     "data-testid": "desktop-menu",
     className: "ml-2"
-  }, mainMenuDropdowns.map(dropdown => {
-    const {
-      id,
-      buttonTitle,
-      items
-    } = dropdown;
+  }, mainMenuDropdowns.map(function (dropdown) {
+    var id = dropdown.id,
+      buttonTitle = dropdown.buttonTitle,
+      items = dropdown.items;
     return /*#__PURE__*/React.createElement(NavDropdownMenu, {
       key: id,
-      id,
-      buttonTitle,
-      items
+      id: id,
+      buttonTitle: buttonTitle,
+      items: items
     });
   }))), /*#__PURE__*/React.createElement(ActionRow.Spacer, null), /*#__PURE__*/React.createElement(Nav, null, /*#__PURE__*/React.createElement("select", {
     className: "language-selector",
@@ -99,11 +91,11 @@ const HeaderBody = _ref => {
   }, "EN"), /*#__PURE__*/React.createElement("option", {
     value: "th"
   }, "TH")), /*#__PURE__*/React.createElement(UserMenu, {
-    username,
-    studioBaseUrl,
-    logoutUrl,
-    authenticatedUserAvatar,
-    isAdmin
+    username: username,
+    studioBaseUrl: studioBaseUrl,
+    logoutUrl: logoutUrl,
+    authenticatedUserAvatar: authenticatedUserAvatar,
+    isAdmin: isAdmin
   }))));
 };
 HeaderBody.propTypes = {
@@ -138,9 +130,9 @@ HeaderBody.defaultProps = {
   isModalPopupOpen: false,
   logo: null,
   logoAltText: null,
-  number: '',
-  org: '',
-  title: '',
+  number: "",
+  org: "",
+  title: "",
   authenticatedUserAvatar: null,
   username: null,
   isAdmin: false,

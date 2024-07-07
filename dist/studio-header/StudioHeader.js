@@ -7,35 +7,32 @@ import fapotImage from '../images/fapot_Header_1_0.png';
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
 ensureConfig(['STUDIO_BASE_URL', 'SITE_NAME', 'LOGOUT_URL', 'LOGIN_URL', 'LOGO_URL'], 'Studio Header component');
-const StudioHeader = _ref => {
-  let {
-    number,
-    org,
-    title,
-    isHiddenMainMenu,
-    mainMenuDropdowns,
-    outlineLink
-  } = _ref;
-  const {
-    authenticatedUser,
-    config
-  } = useContext(AppContext);
-  const props = {
+var StudioHeader = function StudioHeader(_ref) {
+  var number = _ref.number,
+    org = _ref.org,
+    title = _ref.title,
+    isHiddenMainMenu = _ref.isHiddenMainMenu,
+    mainMenuDropdowns = _ref.mainMenuDropdowns,
+    outlineLink = _ref.outlineLink;
+  var _useContext = useContext(AppContext),
+    authenticatedUser = _useContext.authenticatedUser,
+    config = _useContext.config;
+  var props = {
     logo: config.LOGO_URL,
-    logoAltText: `Studio ${config.SITE_NAME}`,
-    number,
-    org,
-    title,
-    username: authenticatedUser?.username,
-    isAdmin: authenticatedUser?.administrator,
-    authenticatedUserAvatar: authenticatedUser?.avatar,
+    logoAltText: "Studio ".concat(config.SITE_NAME),
+    number: number,
+    org: org,
+    title: title,
+    username: authenticatedUser === null || authenticatedUser === void 0 ? void 0 : authenticatedUser.username,
+    isAdmin: authenticatedUser === null || authenticatedUser === void 0 ? void 0 : authenticatedUser.administrator,
+    authenticatedUserAvatar: authenticatedUser === null || authenticatedUser === void 0 ? void 0 : authenticatedUser.avatar,
     studioBaseUrl: config.STUDIO_BASE_URL,
     logoutUrl: config.LOGOUT_URL,
-    isHiddenMainMenu,
-    mainMenuDropdowns,
-    outlineLink
+    isHiddenMainMenu: isHiddenMainMenu,
+    mainMenuDropdowns: mainMenuDropdowns,
+    outlineLink: outlineLink
   };
-  const fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
+  var fullNameTH = 'หอภาพยนตร์ (องค์การมหาชน)';
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "studio-header"
   }, /*#__PURE__*/React.createElement("a", {

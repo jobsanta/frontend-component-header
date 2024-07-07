@@ -5,31 +5,28 @@ import { APP_CONFIG_INITIALIZED, ensureConfig, mergeConfig, subscribe } from '@e
 import LearningHeader from './learning-header/LearningHeader';
 import messages from './Header.messages';
 ensureConfig(['LMS_BASE_URL', 'LOGOUT_URL', 'LOGIN_URL', 'SITE_NAME', 'LOGO_URL', 'ORDER_HISTORY_URL'], 'Header component');
-subscribe(APP_CONFIG_INITIALIZED, () => {
+subscribe(APP_CONFIG_INITIALIZED, function () {
   mergeConfig({
     AUTHN_MINIMAL_HEADER: !!process.env.AUTHN_MINIMAL_HEADER
   }, 'Header additional config');
 });
-const Header = _ref => {
-  let {
-    intl
-  } = _ref;
-  const {
-    authenticatedUser,
-    config
-  } = useContext(AppContext);
-  const orderHistoryItem = {
+var Header = function Header(_ref) {
+  var intl = _ref.intl;
+  var _useContext = useContext(AppContext),
+    authenticatedUser = _useContext.authenticatedUser,
+    config = _useContext.config;
+  var orderHistoryItem = {
     type: 'item',
     href: config.ORDER_HISTORY_URL,
     content: intl.formatMessage(messages['header.user.menu.order.history'])
   };
-  const userMenu = authenticatedUser === null ? [] : [{
+  var userMenu = authenticatedUser === null ? [] : [{
     type: 'item',
-    href: `${config.LMS_BASE_URL}/dashboard`,
+    href: "".concat(config.LMS_BASE_URL, "/dashboard"),
     content: intl.formatMessage(messages['header.user.menu.dashboard'])
   }, {
     type: 'item',
-    href: `${config.ACCOUNT_PROFILE_URL}/u/${authenticatedUser.username}`,
+    href: "".concat(config.ACCOUNT_PROFILE_URL, "/u/").concat(authenticatedUser.username),
     content: intl.formatMessage(messages['header.user.menu.profile'])
   }, {
     type: 'item',
