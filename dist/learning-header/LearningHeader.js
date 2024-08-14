@@ -123,10 +123,7 @@ var LearningHeader = function LearningHeader(_ref2) {
     className: "banner"
   }, /*#__PURE__*/React.createElement("div", {
     className: "banner-container"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: fapotImage,
-    alt: fullNameTH
-  }))), !isHideMenuItem && (authenticatedUser ? /*#__PURE__*/React.createElement("div", {
+  })), !isHideMenuItem && (authenticatedUser ? /*#__PURE__*/React.createElement("div", {
     className: "mobile-menu"
   }, /*#__PURE__*/React.createElement("div", {
     className: "mobile-nav-link"
