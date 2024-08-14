@@ -108,7 +108,6 @@ const LearningHeader = ({
 
         <div className="banner">
           <div className="banner-container">
-            <img src = {fapotImage} alt={fullNameTH}/>
           </div>
         </div>
 
