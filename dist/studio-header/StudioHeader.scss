@@ -3,10 +3,10 @@ $white: #ffffff;
 
 .site-header-desktop {
   .allocate-space {
-    height: 140px;
+    height: 48px;
 
     @media (min-width: 842px) {
-      height: 220px;
+      height: 84px;
     }
   }
 }

@@ -48,10 +48,10 @@ footer {
 }
 
 .allocate-space {
-  height: 128px;
+  height: 48px;
 
   @include media-breakpoint-up(lg) {
-    height: 220px;
+    height: 84px;
   }
 }
 
